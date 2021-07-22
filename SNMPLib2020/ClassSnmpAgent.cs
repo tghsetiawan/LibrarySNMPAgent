@@ -40,25 +40,25 @@ namespace SNMPLib2020
             //this.snmpagent.OnSetRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnSetRequestHandler(this.snmpagent_OnSetRequest);
         }
 
-        public void snmpagent_Start()
-        {
-            try
-            {
-                snmpagent.Active = !snmpagent.Active;
-                //Console.WriteLine(snmpagent.Active.ToString());
-                Console.WriteLine("SNMP Agent is : " + snmpagent.Active.ToString());
-            }
-            catch (IPWorksSNMPException ex1)
-            {
-                if (ex1.Code == 10048)
-                {
-                    Console.WriteLine("The component is unable to bind to port " + snmpagent.LocalPort.ToString() + ", you probably already have an agent listening there.  Stop the other agent or use a different port for this demo.");
-                }
-                Console.WriteLine("Exception " + ex1.Code.ToString() + ": " + ex1.Message);
-            }
-            snmpagent.RuntimeLicense = "314E4E4241413153554252413153554235504A39323833380000000000000000000000000000000044543435555A454400004443365343435A544E4339330000";
-            snmpagent.LocalEngineId = "NI_JakPro_e-Tix_SNMP";
-        }
+        //public void snmpagent_Start()
+        //{
+        //    try
+        //    {
+        //        snmpagent.Active = !snmpagent.Active;
+        //        //Console.WriteLine(snmpagent.Active.ToString());
+        //        Console.WriteLine("SNMP Agent is : " + snmpagent.Active.ToString());
+        //    }
+        //    catch (IPWorksSNMPException ex1)
+        //    {
+        //        if (ex1.Code == 10048)
+        //        {
+        //            Console.WriteLine("The component is unable to bind to port " + snmpagent.LocalPort.ToString() + ", you probably already have an agent listening there.  Stop the other agent or use a different port for this demo.");
+        //        }
+        //        Console.WriteLine("Exception " + ex1.Code.ToString() + ": " + ex1.Message);
+        //    }
+        //    snmpagent.RuntimeLicense = "314E4E4241413153554252413153554235504A39323833380000000000000000000000000000000044543435555A454400004443365343435A544E4339330000";
+        //    snmpagent.LocalEngineId = "NI_JakPro_e-Tix_SNMP";
+        //}
 
         public bool snmpagentStart()
         {
