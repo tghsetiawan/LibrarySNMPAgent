@@ -1,0 +1,1504 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>nsoftware.IPWorksSNMP</name>
+    </assembly>
+    <members>
+        <member name="F:nsoftware.core.LoadCertificateForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:nsoftware.core.LoadCertificateForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:nsoftware.core.LoadCertificateForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.CertmgrCertChainEventArgs">
+            <summary>Event arguments for the CertChain event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.CertmgrCertListEventArgs">
+            <summary>Event arguments for the CertList event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.CertmgrErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.CertmgrKeyListEventArgs">
+            <summary>Event arguments for the KeyList event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.CertmgrLogEventArgs">
+            <summary>Event arguments for the Log event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.CertmgrStoreListEventArgs">
+            <summary>Event arguments for the StoreList event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.SetCertStore(System.Byte[],System.Int32,System.Int32)">
+            <summary>The certificate store to search for certificates.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.CreateCertificate(System.String,System.Int32)">
+            <summary>Creates a new self-signed certificate in the current store.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.CreateKey(System.String)">
+            <summary>Creates a new keyset associated with the provided name.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.DeleteCertificate">
+            <summary>Deletes the currently selected certificate from the store.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.DeleteKey(System.String)">
+            <summary>Deletes the keyset associated with the provided name.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ExportCertificate(System.String,System.String)">
+            <summary>Exports the currently selected certificate.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.GenerateCSR(System.String,System.String)">
+            <summary>Generates a new CSR to be sent to a signing authority.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ImportCertificate(System.String,System.String,System.String)">
+            <summary>Imports a certificate from a file into the current certificate store.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ImportSignedCSR(System.Byte[],System.String)">
+            <summary>Imports a signed CSR.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.IssueCertificate(System.String,System.Int32)">
+            <summary>Creates a new certificate in the current store, signed by the selected certificate.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ListCertificateStores">
+            <summary>Lists certificate stores.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ListKeys">
+            <summary>List keysets in a CSP.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ListMachineStores">
+            <summary>List machine certificate stores.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ListStoreCertificates">
+            <summary>List certificates in a store.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ReadCertificate(System.String)">
+            <summary>Loads a certificate from a file.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ReadCSR(System.String)">
+            <summary>Reads a Certificate Signing Request (CSR).</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.Reset">
+            <summary>Resets all certificate properties to their default values.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.SaveCertificate(System.String)">
+            <summary>This method saves the currently selected public certificate to a file.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.ShowCertificateChain">
+            <summary>Show certificate chain.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certmgr.SignCSR(System.Byte[],System.Int32)">
+            <summary>Creates a signed certificate from a CSR.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Certmgr.OnCertChain">
+            <summary>Shows the certificate chain for the certificate (see the ShowCertificateChain method).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Certmgr.OnCertList">
+            <summary>Lists the certificates in a store (see the ListStoreCertificates method).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Certmgr.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Certmgr.OnKeyList">
+            <summary>Lists the keysets in a CSP (see the ListKeys method).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Certmgr.OnLog">
+            <summary>Fires once for each log message.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Certmgr.OnStoreList">
+            <summary>Lists the system certificate stores (see the ListCertificateStores and ListMachineStores methods).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.Cert">
+            <summary>The current selected certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.CertExtensions">
+            <summary>A list of extensions used by the currently selected certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.CertStoreB">
+            <summary>The certificate store to search for certificates.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.CertStore">
+            <summary>The certificate store to search for certificates.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.CertStorePassword">
+            <summary>The password for the certificate store (if any).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.CertStoreType">
+            <summary>The type of certificate store for CertStore .</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.ExportedCertB">
+            <summary>The exported certificate string.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.ExportedCert">
+            <summary>The exported certificate string.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.ExportFormat">
+            <summary>The format to which the certficate is exported.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certmgr.ExportPrivateKey">
+            <summary>Whether to export the private key.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.MibbrowserErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.MibbrowserImportSymbolsEventArgs">
+            <summary>Event arguments for the ImportSymbols event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.MibbrowserMibNodeEventArgs">
+            <summary>Event arguments for the MibNode event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.MibbrowserTrapNodeEventArgs">
+            <summary>Event arguments for the TrapNode event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.ListChildren">
+            <summary>Lists the immediate children of the selected node.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.ListSuccessors">
+            <summary>Lists all successors of the selected node.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.ListTraps">
+            <summary>Lists all the traps defined in the loaded modules.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.LoadMib(System.String)">
+            <summary>Parses the file FileName and adds the parsed nodes to the collection of existing nodes.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.Reset">
+            <summary>Reset all properties of the component.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Mibbrowser.SelectNode(System.String)">
+            <summary>Used to select individual nodes in the loaded MIB module(s).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Mibbrowser.OnError">
+            <summary>Errors that occur while loading/parsing MIB modules are fired through this event.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Mibbrowser.OnImportSymbols">
+            <summary>List of imported symbols and the respective modules where they are declared.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Mibbrowser.OnMibNode">
+            <summary>This event fires once for every child or successor of the currently selected node when invoking ListChildren or ListSuccessors .</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Mibbrowser.OnTrapNode">
+            <summary>Lists module trap information.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.ExactMatch">
+            <summary>Controls the way the OID matching is done (complete or partial).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeAccess">
+            <summary>The access permissions for the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeDescription">
+            <summary>Textual description of the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeFileName">
+            <summary>The absolute path of the file where the selected node is declared.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeFullLabel">
+            <summary>The full label of the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeIndex">
+            <summary>The index of the node in a table.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeLabel">
+            <summary>The label of the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeModuleName">
+            <summary>The name of the module where the selected node is declared.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeOid">
+            <summary>The Object ID of the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeSubId">
+            <summary>The SubId of the currently selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeSyntax">
+            <summary>The syntax of the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeSyntaxString">
+            <summary>The node syntax of the selected node in text format.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeType">
+            <summary>The type of the selected node.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Mibbrowser.NodeTypeString">
+            <summary>The node type of the selected node in text format.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentBadPacketEventArgs">
+            <summary>Event arguments for the BadPacket event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentCacheEntryEventArgs">
+            <summary>Event arguments for the CacheEntry event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentDiscoveryRequestEventArgs">
+            <summary>Event arguments for the DiscoveryRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentGetBulkRequestEventArgs">
+            <summary>Event arguments for the GetBulkRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentGetNextRequestEventArgs">
+            <summary>Event arguments for the GetNextRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentGetRequestEventArgs">
+            <summary>Event arguments for the GetRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentGetUserPasswordEventArgs">
+            <summary>Event arguments for the GetUserPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentGetUserSecurityLevelEventArgs">
+            <summary>Event arguments for the GetUserSecurityLevel event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentHashPasswordEventArgs">
+            <summary>Event arguments for the HashPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentPacketTraceEventArgs">
+            <summary>Event arguments for the PacketTrace event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentReadyToSendEventArgs">
+            <summary>Event arguments for the ReadyToSend event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentReportEventArgs">
+            <summary>Event arguments for the Report event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpagentSetRequestEventArgs">
+            <summary>Event arguments for the SetRequest event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.SetLocalEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id of the SNMP Agent.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.AddUser(System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>Adds a user to the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.ClearCache">
+            <summary>Clears the internal authentication database.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.DoEvents">
+            <summary>Processes events from the internal message queue.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.HashPasswords">
+            <summary>Hashes all passwords in the cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.RemoveUser(System.String)">
+            <summary>Removes the user specified by User from the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.Reset">
+            <summary>Clears the object arrays.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.SendResponse(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>Sends a response packet to a Get, Get-Next, Get-Bulk, or Set request.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.SendSecureResponse(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>Sends an authenticated and/or encrypted SNMPv3 response.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.SendSecureTrap(System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>Sends an authenticated and/or encrypted SNMPv3 trap.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.SendTrap(System.String,System.String)">
+            <summary>Sends an SNMP Trap.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.ShowCache">
+            <summary>Lists all entries in the internal user authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpagent.Value(System.String)">
+            <summary>Returns the value corresponding to an OID.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnBadPacket">
+            <summary>Fired for erroneous and/or malformed messages.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnCacheEntry">
+            <summary>Shows in the internal cache.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnDiscoveryRequest">
+            <summary>Fired when an SNMPv3 discovery packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnGetBulkRequest">
+            <summary>Fired when a GetBulkRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequest">
+            <summary>Fired when a GetNextRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnGetRequest">
+            <summary>Fired when a GetRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnGetUserPassword">
+            <summary>Retrieves a password associated with a user.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnGetUserSecurityLevel">
+            <summary>Sets the security level for an incoming packet.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnHashPassword">
+            <summary>Fired before and after a password is hashed.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnPacketTrace">
+            <summary>Fired for every packet sent or received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnReadyToSend">
+            <summary>Fired when the component is ready to send data.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnReport">
+            <summary>Fired when a Report packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpagent.OnSetRequest">
+            <summary>Fired when a SetRequest packet is received.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.AcceptData">
+            <summary>Enables or disables data reception.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.Active">
+            <summary>Enables or disables sending and receiving of SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.LocalEngineIdB">
+            <summary>The Engine Id of the SNMP Agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.LocalEngineId">
+            <summary>The Engine Id of the SNMP Agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.LocalHost">
+            <summary>The name of the local host or user-assigned IP interface through which connections are initiated or accepted.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.LocalPort">
+            <summary>The port in the local host where the component listens.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.Objects">
+            <summary>The objects in the current request.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.RequestId">
+            <summary>The request-id to mark outgoing packets with.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.SNMPVersion">
+            <summary>Version of SNMP used for outgoing requests (traps).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpagent.SysUpTime">
+            <summary>Time passed since the agent was initialized (in hundredths of a second).</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrBadPacketEventArgs">
+            <summary>Event arguments for the BadPacket event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrDiscoveryRequestEventArgs">
+            <summary>Event arguments for the DiscoveryRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrDiscoveryResponseEventArgs">
+            <summary>Event arguments for the DiscoveryResponse event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrHashPasswordEventArgs">
+            <summary>Event arguments for the HashPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrInformRequestEventArgs">
+            <summary>Event arguments for the InformRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrPacketTraceEventArgs">
+            <summary>Event arguments for the PacketTrace event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrReadyToSendEventArgs">
+            <summary>Event arguments for the ReadyToSend event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrReportEventArgs">
+            <summary>Event arguments for the Report event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrResponseEventArgs">
+            <summary>Event arguments for the Response event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmpmgrTrapEventArgs">
+            <summary>Event arguments for the Trap event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SetLocalEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id of the SNMP Manager.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SetRemoteEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id of the remote agent.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.Discover">
+            <summary>Performs SNMPv3 discovery.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.DoEvents">
+            <summary>Processes events from the internal message queue.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.HashPasswords">
+            <summary>Hashes all passwords in the cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.Interrupt">
+            <summary>Interrupt the current method.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.Reset">
+            <summary>Clears the object arrays.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SendGetBulkRequest(System.Int32,System.Int32)">
+            <summary>Send a GetBulkRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SendGetNextRequest">
+            <summary>Send GetNextRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SendGetRequest">
+            <summary>Send GetRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SendInformRequest">
+            <summary>Send an InformRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.SendSetRequest">
+            <summary>Send Set Request packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.Value(System.String)">
+            <summary>Returns the value corresponding to an OID.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmpmgr.Walk(System.String)">
+            <summary>Does an SNMP walk starting with the specified oid.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnBadPacket">
+            <summary>Fired for erroneous and/or malformed messages.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnDiscoveryRequest">
+            <summary>Fired when an SNMPv3 discovery packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnDiscoveryResponse">
+            <summary>Fired when an SNMPv3 discovery response is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnHashPassword">
+            <summary>Fired before and after a password is hashed.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnInformRequest">
+            <summary>Fired when an InformRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnPacketTrace">
+            <summary>Fired for every packet sent or received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnReadyToSend">
+            <summary>Fired when the component is ready to send data.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnReport">
+            <summary>Fired when a Report packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnResponse">
+            <summary>Fired when a GetResponse packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmpmgr.OnTrap">
+            <summary>Fired when a SNMP trap packet is received.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.AcceptData">
+            <summary>Enables or disables data reception.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.Active">
+            <summary>Enables or disables sending and receiving of SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.AuthenticationPassword">
+            <summary>The password used for SNMPv3 authentication.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.AuthenticationProtocol">
+            <summary>The authentication protocol used for SNMPv3 packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.Community">
+            <summary>The community string used to authenticate SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.EncryptionAlgorithm">
+            <summary>The encryption algorithm used for SNMPv3 packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.EncryptionPassword">
+            <summary>The password used for SNMPv3 privacy.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.ErrorDescription">
+            <summary>Description of the status code for the last SNMP packet received by the component.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.ErrorIndex">
+            <summary>Index of the first variable (object) that caused an error from the last SNMP response.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.ErrorStatus">
+            <summary>Status code for the last SNMP packet received by the component.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.LocalEngineIdB">
+            <summary>The Engine Id of the SNMP Manager.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.LocalEngineId">
+            <summary>The Engine Id of the SNMP Manager.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.LocalHost">
+            <summary>The name of the local host or user-assigned IP interface through which connections are initiated or accepted.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.LocalPort">
+            <summary>The port in the local host where the SNMP Manager is bound to.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.Objects">
+            <summary>The objects in the current request.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RemoteEngineBoots">
+            <summary>The remote engine boots (SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RemoteEngineIdB">
+            <summary>The Engine Id of the remote agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RemoteEngineId">
+            <summary>The Engine Id of the remote agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RemoteEngineTime">
+            <summary>The remote engine time (SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RemoteHost">
+            <summary>The address of the remote host.  Domain names are resolved to IP addresses.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RemotePort">
+            <summary>The port where the remote SNMP agent is listening.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.RequestId">
+            <summary>The request-id to mark outgoing packets with.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.SNMPVersion">
+            <summary>Version of SNMP used for outgoing requests.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.StoreWalkObjects">
+            <summary>Tells the component whether or not to store returned objects.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.Timeout">
+            <summary>A timeout for the component.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.User">
+            <summary>The user name used for SNMPv3 authentication.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmpmgr.WalkLimit">
+            <summary>The limit of oid's returned in a walk.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentBadPacketEventArgs">
+            <summary>Event arguments for the BadPacket event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentCacheEntryEventArgs">
+            <summary>Event arguments for the CacheEntry event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentConnectedEventArgs">
+            <summary>Event arguments for the Connected event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentConnectionStatusEventArgs">
+            <summary>Event arguments for the ConnectionStatus event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentDisconnectedEventArgs">
+            <summary>Event arguments for the Disconnected event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentDiscoveryRequestEventArgs">
+            <summary>Event arguments for the DiscoveryRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentGetBulkRequestEventArgs">
+            <summary>Event arguments for the GetBulkRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentGetNextRequestEventArgs">
+            <summary>Event arguments for the GetNextRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentGetRequestEventArgs">
+            <summary>Event arguments for the GetRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentGetUserPasswordEventArgs">
+            <summary>Event arguments for the GetUserPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentGetUserSecurityLevelEventArgs">
+            <summary>Event arguments for the GetUserSecurityLevel event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentHashPasswordEventArgs">
+            <summary>Event arguments for the HashPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentPacketTraceEventArgs">
+            <summary>Event arguments for the PacketTrace event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentReadyToSendEventArgs">
+            <summary>Event arguments for the ReadyToSend event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentReportEventArgs">
+            <summary>Event arguments for the Report event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentSetRequestEventArgs">
+            <summary>Event arguments for the SetRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentSSLClientAuthenticationEventArgs">
+            <summary>Event arguments for the SSLClientAuthentication event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentSSLServerAuthenticationEventArgs">
+            <summary>Event arguments for the SSLServerAuthentication event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpagentSSLStatusEventArgs">
+            <summary>Event arguments for the SSLStatus event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.SetLocalEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id of the SNMP Agent.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.AddUser(System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>Adds a user to the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.ClearCache">
+            <summary>Clears the internal authentication database.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.DoEvents">
+            <summary>Processes events from the internal message queue.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.HashPasswords">
+            <summary>Hashes all passwords in the cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.RemoveUser(System.String)">
+            <summary>Removes the user specified by User from the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.Reset">
+            <summary>Clears the object arrays.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.SendResponse(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>Sends a response packet to a Get, Get-Next, Get-Bulk, or Set request.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.SendSecureResponse(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>Sends an authenticated and/or encrypted SNMPv3 response.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.SendSecureTrap(System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>Sends an authenticated and/or encrypted SNMPv3 trap.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.SendTrap(System.String,System.String)">
+            <summary>Sends an SNMP Trap.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.ShowCache">
+            <summary>Lists all entries in the internal user authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpagent.Value(System.String)">
+            <summary>Returns the value corresponding to an OID.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnBadPacket">
+            <summary>Fired for erroneous and/or malformed messages.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnCacheEntry">
+            <summary>Shows in the internal cache.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnConnected">
+            <summary>Fired immediately after a connection completes (or fails).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnConnectionStatus">
+            <summary>TBD.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnDisconnected">
+            <summary>TBD.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnDiscoveryRequest">
+            <summary>Fired when an SNMPv3 discovery packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnGetBulkRequest">
+            <summary>Fired when a GetBulkRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnGetNextRequest">
+            <summary>Fired when a GetNextRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnGetRequest">
+            <summary>Fired when a GetRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnGetUserPassword">
+            <summary>Retrieves a password associated with a user.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnGetUserSecurityLevel">
+            <summary>Sets the security level for an incoming packet.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnHashPassword">
+            <summary>Fired before and after a password is hashed.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnPacketTrace">
+            <summary>Fired for every packet sent or received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnReadyToSend">
+            <summary>Fired when the component is ready to send data.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnReport">
+            <summary>Fired when a Report packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnSetRequest">
+            <summary>Fired when a SetRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnSSLClientAuthentication">
+            <summary>Fired when the client presents its credentials to the server.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnSSLServerAuthentication">
+            <summary>Fires when connecting to the server.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpagent.OnSSLStatus">
+            <summary>Shows the progress of the secure connection.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.AcceptData">
+            <summary>Enables or disables data reception.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.Active">
+            <summary>Enables or disables sending and receiving of SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.LocalEngineIdB">
+            <summary>The Engine Id of the SNMP Agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.LocalEngineId">
+            <summary>The Engine Id of the SNMP Agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.LocalHost">
+            <summary>The name of the local host or user-assigned IP interface through which connections are initiated or accepted.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.LocalPort">
+            <summary>The port in the local host where the component listens.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.Objects">
+            <summary>The objects in the current request.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.RequestId">
+            <summary>The request-id to mark outgoing packets with.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SNMPVersion">
+            <summary>Version of SNMP used for outgoing requests (traps).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SSLAcceptServerCert">
+            <summary>Instructs the component to unconditionally accept the server certificate that matches the supplied certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SSLAuthenticateClients">
+            <summary>If true, the server asks the client(s) for a certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SSLCert">
+            <summary>The certificate to be used during SSL negotiation.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SSLEnabled">
+            <summary>Whether TLS/SSL is enabled.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SSLServerCert">
+            <summary>The server certificate for the last established connection.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpagent.SysUpTime">
+            <summary>Time passed since the agent was initialized (in hundredths of a second).</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrBadPacketEventArgs">
+            <summary>Event arguments for the BadPacket event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrConnectedEventArgs">
+            <summary>Event arguments for the Connected event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrConnectionStatusEventArgs">
+            <summary>Event arguments for the ConnectionStatus event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrDisconnectedEventArgs">
+            <summary>Event arguments for the Disconnected event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrDiscoveryRequestEventArgs">
+            <summary>Event arguments for the DiscoveryRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrDiscoveryResponseEventArgs">
+            <summary>Event arguments for the DiscoveryResponse event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrHashPasswordEventArgs">
+            <summary>Event arguments for the HashPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrInformRequestEventArgs">
+            <summary>Event arguments for the InformRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrPacketTraceEventArgs">
+            <summary>Event arguments for the PacketTrace event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrReadyToSendEventArgs">
+            <summary>Event arguments for the ReadyToSend event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrReportEventArgs">
+            <summary>Event arguments for the Report event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrResponseEventArgs">
+            <summary>Event arguments for the Response event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrSSLClientAuthenticationEventArgs">
+            <summary>Event arguments for the SSLClientAuthentication event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrSSLServerAuthenticationEventArgs">
+            <summary>Event arguments for the SSLServerAuthentication event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrSSLStatusEventArgs">
+            <summary>Event arguments for the SSLStatus event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcpmgrTrapEventArgs">
+            <summary>Event arguments for the Trap event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SetLocalEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id of the SNMP Manager.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SetRemoteEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id of the remote agent.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.Discover">
+            <summary>Performs SNMPv3 discovery.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.DoEvents">
+            <summary>Processes events from the internal message queue.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.HashPasswords">
+            <summary>Hashes all passwords in the cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.Interrupt">
+            <summary>Interrupt the current method.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.Reset">
+            <summary>Clears the object arrays.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SendGetBulkRequest(System.Int32,System.Int32)">
+            <summary>Send a GetBulkRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SendGetNextRequest">
+            <summary>Send GetNextRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SendGetRequest">
+            <summary>Send GetRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SendInformRequest">
+            <summary>Send an InformRequest packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.SendSetRequest">
+            <summary>Send Set Request packet.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.Value(System.String)">
+            <summary>Returns the value corresponding to an OID.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcpmgr.Walk(System.String)">
+            <summary>Does an SNMP walk starting with the specified oid.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnBadPacket">
+            <summary>Fired for erroneous and/or malformed messages.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnConnected">
+            <summary>Fired immediately after a connection completes (or fails).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnConnectionStatus">
+            <summary>TBD.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnDisconnected">
+            <summary>TBD.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnDiscoveryRequest">
+            <summary>Fired when an SNMPv3 discovery packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnDiscoveryResponse">
+            <summary>Fired when an SNMPv3 discovery response is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnHashPassword">
+            <summary>Fired before and after a password is hashed.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnInformRequest">
+            <summary>Fired when an InformRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnPacketTrace">
+            <summary>Fired for every packet sent or received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnReadyToSend">
+            <summary>Fired when the component is ready to send data.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnReport">
+            <summary>Fired when a Report packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnResponse">
+            <summary>Fired when a GetResponse packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnSSLClientAuthentication">
+            <summary>Fired when the client presents its credentials to the server.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnSSLServerAuthentication">
+            <summary>Fires when connecting to the server.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnSSLStatus">
+            <summary>Shows the progress of the secure connection.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcpmgr.OnTrap">
+            <summary>Fired when a SNMP trap packet is received.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.AcceptData">
+            <summary>Enables or disables data reception.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.Active">
+            <summary>Enables or disables sending and receiving of SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.AuthenticationPassword">
+            <summary>The password used for SNMPv3 authentication.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.AuthenticationProtocol">
+            <summary>The authentication protocol used for SNMPv3 packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.Community">
+            <summary>The community string used to authenticate SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.EncryptionAlgorithm">
+            <summary>The encryption algorithm used for SNMPv3 packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.EncryptionPassword">
+            <summary>The password used for SNMPv3 privacy.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.ErrorDescription">
+            <summary>Description of the status code for the last SNMP packet received by the component.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.ErrorIndex">
+            <summary>Index of the first variable (object) that caused an error from the last SNMP response.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.ErrorStatus">
+            <summary>Status code for the last SNMP packet received by the component.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.LocalEngineIdB">
+            <summary>The Engine Id of the SNMP Manager.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.LocalEngineId">
+            <summary>The Engine Id of the SNMP Manager.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.LocalHost">
+            <summary>The name of the local host or user-assigned IP interface through which connections are initiated or accepted.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.LocalPort">
+            <summary>The port in the local host where the SNMP Manager is bound to.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.Objects">
+            <summary>The objects in the current request.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RemoteEngineBoots">
+            <summary>The remote engine boots (SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RemoteEngineIdB">
+            <summary>The Engine Id of the remote agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RemoteEngineId">
+            <summary>The Engine Id of the remote agent.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RemoteEngineTime">
+            <summary>The remote engine time (SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RemoteHost">
+            <summary>The address of the remote host.  Domain names are resolved to IP addresses.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RemotePort">
+            <summary>The port where the remote SNMP agent is listening.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.RequestId">
+            <summary>The request-id to mark outgoing packets with.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.SNMPVersion">
+            <summary>Version of SNMP used for outgoing requests.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.SSLAcceptServerCert">
+            <summary>Instructs the component to unconditionally accept the server certificate that matches the supplied certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.SSLAuthenticateClients">
+            <summary>If true, the server asks the client(s) for a certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.SSLCert">
+            <summary>The certificate to be used during SSL negotiation.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.SSLEnabled">
+            <summary>Whether TLS/SSL is enabled.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.SSLServerCert">
+            <summary>The server certificate for the last established connection.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.StoreWalkObjects">
+            <summary>Tells the component whether or not to store returned objects.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.Timeout">
+            <summary>A timeout for the component.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.User">
+            <summary>The user name used for SNMPv3 authentication.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcpmgr.WalkLimit">
+            <summary>The limit of oid's returned in a walk.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrBadPacketEventArgs">
+            <summary>Event arguments for the BadPacket event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrCacheEntryEventArgs">
+            <summary>Event arguments for the CacheEntry event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrCheckEngineEventArgs">
+            <summary>Event arguments for the CheckEngine event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrConnectedEventArgs">
+            <summary>Event arguments for the Connected event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrConnectionStatusEventArgs">
+            <summary>Event arguments for the ConnectionStatus event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrDisconnectedEventArgs">
+            <summary>Event arguments for the Disconnected event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrDiscoveryRequestEventArgs">
+            <summary>Event arguments for the DiscoveryRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrGetUserPasswordEventArgs">
+            <summary>Event arguments for the GetUserPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrGetUserSecurityLevelEventArgs">
+            <summary>Event arguments for the GetUserSecurityLevel event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrHashPasswordEventArgs">
+            <summary>Event arguments for the HashPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrInformRequestEventArgs">
+            <summary>Event arguments for the InformRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrPacketTraceEventArgs">
+            <summary>Event arguments for the PacketTrace event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrSSLClientAuthenticationEventArgs">
+            <summary>Event arguments for the SSLClientAuthentication event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrSSLStatusEventArgs">
+            <summary>Event arguments for the SSLStatus event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptcptrapmgrTrapEventArgs">
+            <summary>Event arguments for the Trap event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.SetLocalEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id (for SNMPv3).</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.AddEngine(System.Byte[],System.Int32,System.Int32)">
+            <summary>Adds the engine specified by EngineId to the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.AddUser(System.String,System.Byte[],System.Int32,System.String,System.Int32,System.String)">
+            <summary>Adds a user for the engine specified by EngineId to the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.ClearCache">
+            <summary>Clears the internal authentication database.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.DoEvents">
+            <summary>Processes events from the internal message queue.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.HashPasswords">
+            <summary>Hashes all passwords in the cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.RemoveEngine(System.Byte[])">
+            <summary>Removes the engine specified by EngineId from the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.RemoveUser(System.String,System.Byte[])">
+            <summary>Removes the user specified by User of the engine specified by EngineId from the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.Reset">
+            <summary>Clears the object arrays.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.ShowCache">
+            <summary>Lists all entries in the internal user and engine database.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptcptrapmgr.Value(System.String)">
+            <summary>Returns the value corresponding to an OID.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnBadPacket">
+            <summary>Fired for erroneous and/or malformed messages.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnCacheEntry">
+            <summary>Shows engines and users in the internal cache.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnCheckEngine">
+            <summary>Fired to check engine parameters (timeliness, etc.).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnConnected">
+            <summary>Fired immediately after a connection completes (or fails).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnConnectionStatus">
+            <summary>TBD.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnDisconnected">
+            <summary>TBD.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnDiscoveryRequest">
+            <summary>Fired when an SNMPv3 discovery packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnGetUserPassword">
+            <summary>Retrieves a password associated with a user.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnGetUserSecurityLevel">
+            <summary>Sets the security level for an incoming packet.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnHashPassword">
+            <summary>Fired before and after a password is hashed.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnInformRequest">
+            <summary>Fired when an InformRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnPacketTrace">
+            <summary>Fired for every packet sent or received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnSSLClientAuthentication">
+            <summary>Fired when the client presents its credentials to the server.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnSSLStatus">
+            <summary>Shows the progress of the secure connection.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptcptrapmgr.OnTrap">
+            <summary>Fired when a SNMP trap packet is received.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.AcceptData">
+            <summary>Enables or disables data reception.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.Active">
+            <summary>Enables or disables sending and receiving of SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.LocalEngineIdB">
+            <summary>The Engine Id (for SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.LocalEngineId">
+            <summary>The Engine Id (for SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.LocalHost">
+            <summary>The name of the local host or user-assigned IP interface through which connections are initiated or accepted.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.LocalPort">
+            <summary>The port in the local host where the component is bound to.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.Objects">
+            <summary>The objects in the current request.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.RequestId">
+            <summary>The request-id to mark outgoing packets with.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.SSLAuthenticateClients">
+            <summary>If true, the server asks the client(s) for a certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.SSLCert">
+            <summary>The certificate to be used during SSL negotiation.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptcptrapmgr.SSLEnabled">
+            <summary>Whether TLS/SSL is enabled.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrBadPacketEventArgs">
+            <summary>Event arguments for the BadPacket event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrCacheEntryEventArgs">
+            <summary>Event arguments for the CacheEntry event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrCheckEngineEventArgs">
+            <summary>Event arguments for the CheckEngine event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrDiscoveryRequestEventArgs">
+            <summary>Event arguments for the DiscoveryRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrErrorEventArgs">
+            <summary>Event arguments for the Error event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrGetUserPasswordEventArgs">
+            <summary>Event arguments for the GetUserPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrGetUserSecurityLevelEventArgs">
+            <summary>Event arguments for the GetUserSecurityLevel event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrHashPasswordEventArgs">
+            <summary>Event arguments for the HashPassword event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrInformRequestEventArgs">
+            <summary>Event arguments for the InformRequest event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrPacketTraceEventArgs">
+            <summary>Event arguments for the PacketTrace event.</summary>
+        </member>
+        <member name="T:nsoftware.IPWorksSNMP.SnmptrapmgrTrapEventArgs">
+            <summary>Event arguments for the Trap event.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.SetLocalEngineId(System.Byte[],System.Int32,System.Int32)">
+            <summary>The Engine Id (for SNMPv3).</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.AddEngine(System.Byte[],System.Int32,System.Int32)">
+            <summary>Adds the engine specified by EngineId to the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.AddUser(System.String,System.Byte[],System.Int32,System.String,System.Int32,System.String)">
+            <summary>Adds a user for the engine specified by EngineId to the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.ClearCache">
+            <summary>Clears the internal authentication database.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.Config(System.String)">
+            <summary>Sets or retrieves a configuration setting.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.DoEvents">
+            <summary>Processes events from the internal message queue.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.HashPasswords">
+            <summary>Hashes all passwords in the cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.RemoveEngine(System.Byte[])">
+            <summary>Removes the engine specified by EngineId from the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.RemoveUser(System.String,System.Byte[])">
+            <summary>Removes the user specified by User of the engine specified by EngineId from the internal authentication cache.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.Reset">
+            <summary>Clears the object arrays.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.ShowCache">
+            <summary>Lists all entries in the internal user and engine database.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Snmptrapmgr.Value(System.String)">
+            <summary>Returns the value corresponding to an OID.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.RuntimeLicense">
+            <summary>Runtime license key (derived from the development license, if any).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnBadPacket">
+            <summary>Fired for erroneous and/or malformed messages.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnCacheEntry">
+            <summary>Shows engines and users in the internal cache.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnCheckEngine">
+            <summary>Fired to check engine parameters (timeliness, etc.).</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnDiscoveryRequest">
+            <summary>Fired when an SNMPv3 discovery packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnError">
+            <summary>Information about errors during data delivery.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnGetUserPassword">
+            <summary>Retrieves a password associated with a user.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnGetUserSecurityLevel">
+            <summary>Sets the security level for an incoming packet.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnHashPassword">
+            <summary>Fired before and after a password is hashed.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnInformRequest">
+            <summary>Fired when an InformRequest packet is received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnPacketTrace">
+            <summary>Fired for every packet sent or received.</summary>
+        </member>
+        <member name="E:nsoftware.IPWorksSNMP.Snmptrapmgr.OnTrap">
+            <summary>Fired when a SNMP trap packet is received.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.AcceptData">
+            <summary>Enables or disables data reception.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.Active">
+            <summary>Enables or disables sending and receiving of SNMP packets.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.LocalEngineIdB">
+            <summary>The Engine Id (for SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.LocalEngineId">
+            <summary>The Engine Id (for SNMPv3).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.LocalHost">
+            <summary>The name of the local host or user-assigned IP interface through which connections are initiated or accepted.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.LocalPort">
+            <summary>The port in the local host where the component is bound to.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.Objects">
+            <summary>The objects in the current request.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Snmptrapmgr.RequestId">
+            <summary>The request-id to mark outgoing packets with.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(System.String)">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(System.Byte[])">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(nsoftware.IPWorksSNMP.CertStoreTypes,System.String,System.String,System.String)">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(nsoftware.IPWorksSNMP.CertStoreTypes,System.String,System.String,System.String,System.String)">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(nsoftware.IPWorksSNMP.CertStoreTypes,System.String,System.String,System.Byte[])">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(nsoftware.IPWorksSNMP.CertStoreTypes,System.Byte[],System.String,System.String)">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(nsoftware.IPWorksSNMP.CertStoreTypes,System.Byte[],System.String,System.String,System.String)">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.Certificate.#ctor(nsoftware.IPWorksSNMP.CertStoreTypes,System.Byte[],System.String,System.Byte[])">
+            <summary>The digital certificate being used.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.EffectiveDate">
+            <summary>The date which this certificate becomes valid.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.EncodedB">
+            <summary>The certificate (PEM/base64 encoded).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Encoded">
+            <summary>The certificate (PEM/base64 encoded).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.ExpirationDate">
+            <summary>The date the certificate expires.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.ExtendedKeyUsage">
+            <summary>A comma-delimited list of extended key usage identifiers.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Fingerprint">
+            <summary>The hex-encoded, 16-byte MD5 fingerprint of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Issuer">
+            <summary>The issuer of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.PrivateKey">
+            <summary>The private key of the certificate (if available).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.PrivateKeyAvailable">
+            <summary>Shows whether a PrivateKey is available for the  selected certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.PrivateKeyContainer">
+            <summary>The name of the PrivateKey container for the  certificate (if available).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.PublicKey">
+            <summary>The public key of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.PublicKeyAlgorithm">
+            <summary>Textual description of the public key algorithm of the  certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.PublicKeyLength">
+            <summary>The length of the certificate public key (in bits).</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.SerialNumber">
+            <summary>The serial number of the certificate encoded as a  string.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.SignatureAlgorithm">
+            <summary>Text description of the signature algorithm of the  certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.StoreB">
+            <summary>The name of the certificate store for the client certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Store">
+            <summary>The name of the certificate store for the client certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.StorePassword">
+            <summary>If the certificate store is of a type that requires  a password, this property is used to specify that  password in order to open the certificate store.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.StoreType">
+            <summary>The type of certificate store for this certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Subject">
+            <summary>The subject of the certificate used for client authentication.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.SubjectAltNames">
+            <summary>A comma-separated lists of alternative subject names of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.ThumbprintMD5">
+            <summary>MD5 hash of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.ThumbprintSHA1">
+            <summary>SHA1 hash of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.ThumbprintSHA256">
+            <summary>SHA256 hash of the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Usage">
+            <summary>Text description of UsageFlags .</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.UsageFlags">
+            <summary>Flags that show intended use for the certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.Certificate.Version">
+            <summary>The certificate's version number.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.CertExtension.#ctor(System.String,System.Byte[],System.Boolean)">
+            <summary>Represents an extension for a certificate.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.CertExtension.Critical">
+            <summary>Whether or not the extension is defined as critical.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.CertExtension.OID">
+            <summary>The ASN.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.CertExtension.ValueB">
+            <summary>The raw value of this certificate extension.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.CertExtension.Value">
+            <summary>The raw value of this certificate extension.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.SNMPObject.#ctor">
+            <summary>The current SNMP object.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.SNMPObject.#ctor(System.String)">
+            <summary>The current SNMP object.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.SNMPObject.#ctor(System.String,System.Byte[])">
+            <summary>The current SNMP object.</summary>
+        </member>
+        <member name="M:nsoftware.IPWorksSNMP.SNMPObject.#ctor(System.String,System.Byte[],nsoftware.IPWorksSNMP.SNMPObjectTypes)">
+            <summary>The current SNMP object.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.SNMPObject.ObjectType">
+            <summary>The current object's type.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.SNMPObject.Oid">
+            <summary>The current object's id which is encoded as a string of numbers separated by periods.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.SNMPObject.TypeString">
+            <summary>A string representation of the current object's ObjectType .</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.SNMPObject.ValueB">
+            <summary>The current object's value.</summary>
+        </member>
+        <member name="P:nsoftware.IPWorksSNMP.SNMPObject.Value">
+            <summary>The current object's value.</summary>
+        </member>
+    </members>
+</doc>

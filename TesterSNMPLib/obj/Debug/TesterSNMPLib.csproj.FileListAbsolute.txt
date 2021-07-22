@@ -1,0 +1,15 @@
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\TesterSNMPLib.exe
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\TesterSNMPLib.pdb
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.csprojAssemblyReference.cache
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.Properties.Resources.resources
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.csproj.GenerateResource.cache
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.csproj.CoreCompileInputs.cache
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.exe
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.pdb
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\nsoftware.IPWorksSNMP.System.dll
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.Form1.resources
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.csproj.CopyComplete
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\nsoftware.IPWorksSNMP.xml
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\SNMPLib2020.dll
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\SNMPLib2020.pdb
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.exe.licenses

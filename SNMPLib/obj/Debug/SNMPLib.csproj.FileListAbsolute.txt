@@ -1,0 +1,10 @@
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\bin\Debug\SNMPLib.dll
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\bin\Debug\SNMPLib.pdb
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\bin\Debug\nsoftware.IPWorksSNMP.dll
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\bin\Debug\nsoftware.IPWorksSNMP.System.dll
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\obj\Debug\SNMPLib.csprojAssemblyReference.cache
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\obj\Debug\SNMPLib.csproj.CoreCompileInputs.cache
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\obj\Debug\SNMPLib.csproj.CopyComplete
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\obj\Debug\SNMPLib.dll
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\obj\Debug\SNMPLib.pdb
+C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\SNMPLib\bin\Debug\nsoftware.IPWorksSNMP.xml
