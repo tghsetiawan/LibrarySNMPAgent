@@ -35,8 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtOIDVal4 = new System.Windows.Forms.TextBox();
             this.txtOIDVal3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtOIDVal13 = new System.Windows.Forms.TextBox();
             this.txtOIDVal12 = new System.Windows.Forms.TextBox();
             this.txtOIDVal11 = new System.Windows.Forms.TextBox();
@@ -54,14 +52,14 @@
             this.Label9 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
             this.Label4 = new System.Windows.Forms.Label();
-            this.txtOIDVal1 = new System.Windows.Forms.TextBox();
-            this.txtOIDVal0 = new System.Windows.Forms.TextBox();
             this.txtOIDVal2 = new System.Windows.Forms.TextBox();
-            this.tbEngineID = new System.Windows.Forms.TextBox();
             this.cmdListen = new System.Windows.Forms.Button();
             this.snmpagent1 = new nsoftware.IPWorksSNMP.Snmpagent(this.components);
             this.lstEvents = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnSet1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOIDVal15
@@ -100,10 +98,8 @@
             // 
             // txtOIDVal4
             // 
-            this.txtOIDVal4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOIDVal4.BackColor = System.Drawing.Color.White;
-            this.txtOIDVal4.Location = new System.Drawing.Point(111, 56);
+            this.txtOIDVal4.Location = new System.Drawing.Point(112, 56);
             this.txtOIDVal4.Name = "txtOIDVal4";
             this.txtOIDVal4.Size = new System.Drawing.Size(250, 20);
             this.txtOIDVal4.TabIndex = 149;
@@ -111,27 +107,11 @@
             // 
             // txtOIDVal3
             // 
-            this.txtOIDVal3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOIDVal3.BackColor = System.Drawing.Color.White;
-            this.txtOIDVal3.Location = new System.Drawing.Point(111, 31);
+            this.txtOIDVal3.Location = new System.Drawing.Point(112, 31);
             this.txtOIDVal3.Name = "txtOIDVal3";
             this.txtOIDVal3.Size = new System.Drawing.Size(250, 20);
             this.txtOIDVal3.TabIndex = 148;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(111, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 167;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(111, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 168;
             // 
             // txtOIDVal13
             // 
@@ -282,54 +262,20 @@
             this.Label4.TabIndex = 150;
             this.Label4.Text = "sysDeviceName:";
             // 
-            // txtOIDVal1
-            // 
-            this.txtOIDVal1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOIDVal1.Location = new System.Drawing.Point(111, 56);
-            this.txtOIDVal1.Name = "txtOIDVal1";
-            this.txtOIDVal1.Size = new System.Drawing.Size(172, 20);
-            this.txtOIDVal1.TabIndex = 146;
-            this.txtOIDVal1.Text = "Nutech Integrasi";
-            // 
-            // txtOIDVal0
-            // 
-            this.txtOIDVal0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOIDVal0.Location = new System.Drawing.Point(111, 31);
-            this.txtOIDVal0.Name = "txtOIDVal0";
-            this.txtOIDVal0.Size = new System.Drawing.Size(172, 20);
-            this.txtOIDVal0.TabIndex = 145;
-            this.txtOIDVal0.Text = "JakPro e-Tix SNMP System";
-            // 
             // txtOIDVal2
             // 
-            this.txtOIDVal2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOIDVal2.BackColor = System.Drawing.Color.White;
-            this.txtOIDVal2.Location = new System.Drawing.Point(111, 6);
+            this.txtOIDVal2.Location = new System.Drawing.Point(112, 6);
             this.txtOIDVal2.Name = "txtOIDVal2";
             this.txtOIDVal2.Size = new System.Drawing.Size(250, 20);
             this.txtOIDVal2.TabIndex = 147;
             // 
-            // tbEngineID
-            // 
-            this.tbEngineID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEngineID.Location = new System.Drawing.Point(111, 6);
-            this.tbEngineID.Name = "tbEngineID";
-            this.tbEngineID.Size = new System.Drawing.Size(172, 20);
-            this.tbEngineID.TabIndex = 144;
-            this.tbEngineID.Text = "NI_JakPro_e-Tix_SNMP";
-            // 
             // cmdListen
             // 
-            this.cmdListen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdListen.Location = new System.Drawing.Point(12, 238);
+            this.cmdListen.Location = new System.Drawing.Point(15, 234);
             this.cmdListen.Name = "cmdListen";
-            this.cmdListen.Size = new System.Drawing.Size(349, 35);
+            this.cmdListen.Size = new System.Drawing.Size(428, 35);
             this.cmdListen.TabIndex = 173;
             this.cmdListen.Text = "Start";
             this.cmdListen.Click += new System.EventHandler(this.cmdListen_Click);
@@ -341,26 +287,56 @@
             // lstEvents
             // 
             this.lstEvents.FormattingEnabled = true;
-            this.lstEvents.Location = new System.Drawing.Point(12, 279);
+            this.lstEvents.Location = new System.Drawing.Point(15, 279);
             this.lstEvents.Name = "lstEvents";
-            this.lstEvents.Size = new System.Drawing.Size(349, 303);
+            this.lstEvents.Size = new System.Drawing.Size(428, 290);
             this.lstEvents.TabIndex = 174;
+            // 
+            // btnSet1
+            // 
+            this.btnSet1.Location = new System.Drawing.Point(368, 6);
+            this.btnSet1.Name = "btnSet1";
+            this.btnSet1.Size = new System.Drawing.Size(75, 70);
+            this.btnSet1.TabIndex = 175;
+            this.btnSet1.Text = "Set 1";
+            this.btnSet1.UseVisualStyleBackColor = true;
+            this.btnSet1.Click += new System.EventHandler(this.btnSet1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(139, 121);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 100);
+            this.button3.TabIndex = 177;
+            this.button3.Text = "Set 2";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(368, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 100);
+            this.button2.TabIndex = 178;
+            this.button2.Text = "Set 3";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 598);
+            this.ClientSize = new System.Drawing.Size(456, 583);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSet1);
+            this.Controls.Add(this.txtOIDVal2);
+            this.Controls.Add(this.txtOIDVal3);
+            this.Controls.Add(this.txtOIDVal4);
             this.Controls.Add(this.lstEvents);
             this.Controls.Add(this.cmdListen);
             this.Controls.Add(this.txtOIDVal15);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOIDVal14);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtOIDVal4);
-            this.Controls.Add(this.txtOIDVal3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtOIDVal13);
             this.Controls.Add(this.txtOIDVal12);
             this.Controls.Add(this.txtOIDVal11);
@@ -378,10 +354,6 @@
             this.Controls.Add(this.Label9);
             this.Controls.Add(this.Label5);
             this.Controls.Add(this.Label4);
-            this.Controls.Add(this.txtOIDVal1);
-            this.Controls.Add(this.txtOIDVal0);
-            this.Controls.Add(this.txtOIDVal2);
-            this.Controls.Add(this.tbEngineID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -401,8 +373,6 @@
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.TextBox txtOIDVal4;
         internal System.Windows.Forms.TextBox txtOIDVal3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtOIDVal13;
         private System.Windows.Forms.TextBox txtOIDVal12;
         private System.Windows.Forms.TextBox txtOIDVal11;
@@ -420,14 +390,14 @@
         internal System.Windows.Forms.Label Label9;
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.TextBox txtOIDVal1;
-        internal System.Windows.Forms.TextBox txtOIDVal0;
         internal System.Windows.Forms.TextBox txtOIDVal2;
-        internal System.Windows.Forms.TextBox tbEngineID;
         internal System.Windows.Forms.Button cmdListen;
         private nsoftware.IPWorksSNMP.Snmpagent snmpagent1;
         private System.Windows.Forms.ListBox lstEvents;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnSet1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -22,7 +22,6 @@ namespace TesterSNMPLib
         public Form1()
         {
             InitializeComponent();
-            this.snmpagent.OnGetRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetRequestHandler(this.snmpagent_OnGetRequest);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,153 +53,6 @@ namespace TesterSNMPLib
             cmdListen.Text = snmpagent2020.snmpagentStart() ? "Stop" : "Start";
         }
 
-        //private void OnGetRequest_Data(string a, string b, string c, )
-        //{
-        //    snmpagent_OnGetRequest(sender, e);
-        //    cmdListen_Click(this, (EventArgs)e);
-        //    //snmpagent_OnGetRequest(new object(), new EventArgs());
-        //}
-
-        private void snmpagent_OnGetRequest(object sender, nsoftware.IPWorksSNMP.SnmpagentGetRequestEventArgs e)
-        {
-            Console.WriteLine("GetRequest");
-
-            e.Respond = true;
-
-            var a = "";
-            var b = "";
-
-            if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
-            {
-                for (int i = 0; i < snmpagent.Objects.Count; i++)
-                {
-                    //set objType and objValue to send get response
-                    switch (snmpagent.Objects[i].Oid)
-                    {
-                        case "1.3.6.1.4.1.17.1":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.2.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.2.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.4.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.4.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.4.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.4.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        default:
-                            e.ErrorStatus = 2;
-                            break;
-                    }
-                }
-            }
-            else if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
-            {
-                for (int i = 0; i < snmpagent.Objects.Count; i++)
-                {
-                    //set objType and objValue to send get response
-                    switch (snmpagent.Objects[i].Oid)
-                    {
-                        case "1.3.6.1.4.1.17.1":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.2.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.2.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.4.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.4.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.4.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.4.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        default:
-                            e.ErrorStatus = 2;
-                            break;
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < snmpagent.Objects.Count; i++)
-                {
-                    //set objType and objValue to send get response
-                    switch (snmpagent.Objects[i].Oid)
-                    {
-                        case "1.3.6.1.4.1.17.1":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.2.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.2.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.4.1.17.1.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.4.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.1.4.4.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.1.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.1.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.3.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.3.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.4.0":
-                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1.4.2.4.4.0";
-                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        default:
-                            e.ErrorStatus = 2;
-                            break;
-                    }
-                }
-            }
-        }
-
         private void logEvents(string msg)
         {
             if (lstEvents.Items.Count >= 15)
@@ -214,6 +66,11 @@ namespace TesterSNMPLib
             //{
             //    LogApp(msg);
             //}
+        }
+
+        private void btnSet1_Click(object sender, EventArgs e)
+        {
+            snmpagent2020.set1(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text);
         }
     }
 }
