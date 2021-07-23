@@ -13,11 +13,7 @@ namespace TesterSNMPLib
 {
     public partial class Form1 : Form
     {
-        //private SnmpAgentLib snmpAgent = new SnmpAgentLib();
         private SNMPLib2020.ClassSnmpAgent snmpagent2020 = new ClassSnmpAgent();
-
-        private nsoftware.IPWorksSNMP.Snmpagent snmpagent = new Snmpagent();
-
 
         public Form1()
         {
@@ -53,24 +49,39 @@ namespace TesterSNMPLib
             cmdListen.Text = snmpagent2020.snmpagentStart() ? "Stop" : "Start";
         }
 
-        private void logEvents(string msg)
-        {
-            if (lstEvents.Items.Count >= 15)
-            {
-                lstEvents.Items.Clear();
-            }
+        //private void logEvents(string msg)
+        //{
+        //    if (lstEvents.Items.Count >= 15)
+        //    {
+        //        lstEvents.Items.Clear();
+        //    }
 
-            lstEvents.Items.Add(msg);
-            lstEvents.SelectedIndex = lstEvents.Items.Count - 1;
-            //if (check_log_walk == "on")
-            //{
-            //    LogApp(msg);
-            //}
-        }
+        //    lstEvents.Items.Add(msg);
+        //    lstEvents.SelectedIndex = lstEvents.Items.Count - 1;
+        //    //if (check_log_walk == "on")
+        //    //{
+        //    //    LogApp(msg);
+        //    //}
+        //}
 
         private void btnSet1_Click(object sender, EventArgs e)
         {
             snmpagent2020.set1(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            snmpagent2020.set2(txtOIDVal8.Text, txtOIDVal9.Text, txtOIDVal10.Text, txtOIDVal14.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            snmpagent2020.set3(txtOIDVal11.Text, txtOIDVal12.Text, txtOIDVal13.Text, txtOIDVal15.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            snmpagent2020.setAll(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text, txtOIDVal8.Text, txtOIDVal9.Text, txtOIDVal10.Text, txtOIDVal14.Text, txtOIDVal11.Text, txtOIDVal12.Text, txtOIDVal13.Text, txtOIDVal15.Text);
         }
     }
 }

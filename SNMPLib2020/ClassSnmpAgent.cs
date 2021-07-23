@@ -14,6 +14,7 @@ namespace SNMPLib2020
 
         private string strDeviceName, strStasionCode, strUpTime, strConMbc, strConReaderIn, strConReaderOut, strConReader, strStatMbc, strStatReaderIn, srtStatReaderOut, strStatReader;
 
+        #region properties
         public string DeviceName
         {
             get { return strDeviceName; }
@@ -73,6 +74,7 @@ namespace SNMPLib2020
             get { return strStatReader; }
             set { strStatReader = value; }
         }
+        #endregion
 
         public ClassSnmpAgent()
         {
@@ -90,14 +92,14 @@ namespace SNMPLib2020
             // 
             this.snmpagent.About = "IPWorks SNMP 2020 [Build 7721]";
             this.snmpagent.InvokeThrough = null;
-            //this.snmpagent.OnBadPacket += new nsoftware.IPWorksSNMP.Snmpagent.OnBadPacketHandler(this.snmpagent_OnBadPacket);
+            this.snmpagent.OnBadPacket += new nsoftware.IPWorksSNMP.Snmpagent.OnBadPacketHandler(this.snmpagent_OnBadPacket);
             //this.snmpagent.OnDiscoveryRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnDiscoveryRequestHandler(this.snmpagent_OnDiscoveryRequest);
-            //this.snmpagent.OnError += new nsoftware.IPWorksSNMP.Snmpagent.OnErrorHandler(this.snmpagent_OnError);
+            this.snmpagent.OnError += new nsoftware.IPWorksSNMP.Snmpagent.OnErrorHandler(this.snmpagent_OnError);
             //this.snmpagent.OnGetBulkRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetBulkRequestHandler(this.snmpagent_OnGetBulkRequest);
             this.snmpagent.OnGetNextRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagent_OnGetNextRequest);
             this.snmpagent.OnGetRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetRequestHandler(this.snmpagent_OnGetRequest);
             //this.snmpagent.OnGetUserPassword += new nsoftware.IPWorksSNMP.Snmpagent.OnGetUserPasswordHandler(this.snmpagent_OnGetUserPassword);
-            //this.snmpagent.OnPacketTrace += new nsoftware.IPWorksSNMP.Snmpagent.OnPacketTraceHandler(this.snmpagent_OnPacketTrace);
+            this.snmpagent.OnPacketTrace += new nsoftware.IPWorksSNMP.Snmpagent.OnPacketTraceHandler(this.snmpagent_OnPacketTrace);
             //this.snmpagent.OnReport += new nsoftware.IPWorksSNMP.Snmpagent.OnReportHandler(this.snmpagent_OnReport);
             //this.snmpagent.OnSetRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnSetRequestHandler(this.snmpagent_OnSetRequest);
         }
@@ -127,7 +129,6 @@ namespace SNMPLib2020
             try
             {
                 snmpagent.Active = !snmpagent.Active;
-                //Console.WriteLine(snmpagent.Active.ToString());
                 Console.WriteLine("SNMP Agent is : " + snmpagent.Active.ToString());
                 snmpagent.RuntimeLicense = "314E4E4241413153554252413153554235504A39323833380000000000000000000000000000000044543435555A454400004443365343435A544E4339330000";
                 snmpagent.LocalEngineId = "NI_JakPro_e-Tix_SNMP";
@@ -146,9 +147,42 @@ namespace SNMPLib2020
 
         public void set1(string _strDeviceName, string _strStasionCode, string _strUpTime)
         {
-            strDeviceName = _strDeviceName;
-            strStasionCode = _strStasionCode;
-            strUpTime = _strUpTime;
+            DeviceName = _strDeviceName;
+            StasionCode = _strStasionCode;
+            UpTime = _strUpTime;
+        }
+
+        public void set2(string _strConMbc, string _strConReaderIn, string _strConReaderOut, string _strConReader)
+        {
+            ConnectionMbc = _strConMbc;
+            ConnectionReaderIn = _strConReaderIn;
+            ConnectionReaderOut = _strConReaderOut;
+            ConnectionReader = _strConReader;
+        }
+
+        public void set3(string _strStatMbc, string _strStatReaderIn, string _strStatReaderOut, string _strStatReader)
+        {
+            StatusMbc = _strStatMbc;
+            StatusReaderIn = _strStatReaderIn;
+            StatusReaderOut = _strStatReaderOut;
+            StatusReader = _strStatReader;
+        }
+
+        public void setAll(string _strDeviceName, string _strStasionCode, string _strUpTime, string _strConMbc, string _strConReaderIn, string _strConReaderOut, string _strConReader, string _strStatMbc, string _strStatReaderIn, string _strStatReaderOut, string _strStatReader)
+        {
+            DeviceName = _strDeviceName;
+            StasionCode = _strStasionCode;
+            UpTime = _strUpTime;
+
+            ConnectionMbc = _strConMbc;
+            ConnectionReaderIn = _strConReaderIn;
+            ConnectionReaderOut = _strConReaderOut;
+            ConnectionReader = _strConReader;
+
+            StatusMbc = _strStatMbc;
+            StatusReaderIn = _strStatReaderIn;
+            StatusReaderOut = _strStatReaderOut;
+            StatusReader = _strStatReader;
         }
 
         //public void snmpagent_OnReport(object sender, nsoftware.IPWorksSNMP.SnmpagentReportEventArgs e)
@@ -208,10 +242,7 @@ namespace SNMPLib2020
 
             e.Respond = true;
 
-            var a = "";
-            var b = "";
-
-            if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
+            if (string.IsNullOrEmpty(strStatReaderIn) || string.IsNullOrEmpty(strConReaderIn))
             {
                 for (int i = 0; i < snmpagent.Objects.Count; i++)
                 {
@@ -221,51 +252,51 @@ namespace SNMPLib2020
                         case "1.3.6.1.2.1.1":
                         case "1.3.6.1.2.1.1.1":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1";
-                            snmpagent.Objects[i].Value = "Nutech Integrasi";
+                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1";
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.4.1.17.1":
                         case "1.3.6.1.2.1.1.3":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.1.0";
-                            snmpagent.Objects[i].Value = "GATEKGB01";
+                            snmpagent.Objects[i].Value = strDeviceName;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.2.1.1.2":
                         case "1.3.6.1.4.1.17.1.1.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.2.0";
-                            snmpagent.Objects[i].Value = "KGB";
+                            snmpagent.Objects[i].Value = strStasionCode;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.2.1.1.5":
                         case "1.3.6.1.4.1.17.1.2.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.3.0";
-                            snmpagent.Objects[i].Value = "3141";
+                            snmpagent.Objects[i].Value = strUpTime;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
                         case "1.3.6.1.2.1.1.6":
                         case "1.3.6.1.4.1.17.1.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.1.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = strConMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.7":
                         case "1.3.6.1.4.1.17.1.4.1.4.1.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.3.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strConReaderOut;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.8":
                         case "1.3.6.1.4.1.17.1.4.1.4.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.4.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = strConReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.9":
                         case "1.3.6.1.4.1.17.1.4.1.4.4.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.1.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strStatMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.10":
                         case "1.3.6.1.4.1.17.1.4.2.4.1.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.3.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = srtStatReaderOut;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.4.1.17.1.4.2.4.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.4.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strStatReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         default:
                             e.ErrorStatus = 2;
@@ -273,7 +304,7 @@ namespace SNMPLib2020
                     }
                 }
             }
-            else if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
+            else if (string.IsNullOrEmpty(strConReaderOut) || string.IsNullOrEmpty(srtStatReaderOut))
             {
                 for (int i = 0; i < snmpagent.Objects.Count; i++)
                 {
@@ -283,51 +314,51 @@ namespace SNMPLib2020
                         case "1.3.6.1.2.1.1":
                         case "1.3.6.1.2.1.1.1":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1";
-                            snmpagent.Objects[i].Value = "Nutech Integrasi";
+                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1";
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.4.1.17.1":
                         case "1.3.6.1.2.1.1.3":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.1.0";
-                            snmpagent.Objects[i].Value = "GATEKGB01";
+                            snmpagent.Objects[i].Value = strDeviceName;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.2.1.1.2":
+                        case "1.3.6.1.2.1.1.4":
                         case "1.3.6.1.4.1.17.1.1.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.2.0";
-                            snmpagent.Objects[i].Value = "KGB";
+                            snmpagent.Objects[i].Value = strStasionCode;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.2.1.1.5":
                         case "1.3.6.1.4.1.17.1.2.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.3.0";
-                            snmpagent.Objects[i].Value = "3141";
+                            snmpagent.Objects[i].Value = strUpTime;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
                         case "1.3.6.1.2.1.1.6":
                         case "1.3.6.1.4.1.17.1.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.1.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = strConMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.7":
                         case "1.3.6.1.4.1.17.1.4.1.4.1.0":
-                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.3.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.2.0";
+                            snmpagent.Objects[i].Value = strConReaderIn;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.8":
-                        case "1.3.6.1.4.1.17.1.4.1.4.3.0":
+                        case "1.3.6.1.4.1.17.1.4.1.4.2.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.4.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = strConReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.9":
                         case "1.3.6.1.4.1.17.1.4.1.4.4.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.1.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strStatMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.2.1.1.10":
                         case "1.3.6.1.4.1.17.1.4.2.4.1.0":
-                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.3.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.2.0";
+                            snmpagent.Objects[i].Value = strStatReaderIn;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.3.0":
+                        case "1.3.6.1.4.1.17.1.4.2.4.2.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.4.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strStatReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         default:
                             e.ErrorStatus = 2;
@@ -345,51 +376,61 @@ namespace SNMPLib2020
                         case "1.3.6.1.2.1.1":
                         case "1.3.6.1.2.1.1.1":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1";
-                            snmpagent.Objects[i].Value = "Nutech Integrasi";
+                            snmpagent.Objects[i].Value = "1.3.6.1.4.1.17.1";
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.4.1.17.1":
                         case "1.3.6.1.2.1.1.3":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.1.0";
-                            snmpagent.Objects[i].Value = "GATEKGB01";
+                            snmpagent.Objects[i].Value = strDeviceName;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
-                        case "1.3.6.1.2.1.1.2":
+                        case "1.3.6.1.2.1.1.4":
                         case "1.3.6.1.4.1.17.1.1.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.2.0";
-                            snmpagent.Objects[i].Value = "KGB";
+                            snmpagent.Objects[i].Value = strStasionCode;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
                         case "1.3.6.1.2.1.1.5":
                         case "1.3.6.1.4.1.17.1.2.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.3.0";
-                            snmpagent.Objects[i].Value = "3141";
+                            snmpagent.Objects[i].Value = strUpTime;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
-                        case "1.3.6.1.2.1.1.6":
+                        case "1.3.6.1.2.1.1.11":
                         case "1.3.6.1.4.1.17.1.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.1.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = strConMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.2.1.1.7":
+                        case "1.3.6.1.2.1.1.12":
                         case "1.3.6.1.4.1.17.1.4.1.4.1.0":
-                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.3.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.2.0";
+                            snmpagent.Objects[i].Value = strConReaderIn;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.2.1.1.8":
+                        case "1.3.6.1.2.1.1.13":
+                        case "1.3.6.1.4.1.17.1.4.1.4.2.0":
+                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.3.0";
+                            snmpagent.Objects[i].Value = strConReaderOut;
+                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                        case "1.3.6.1.2.1.1.14":
                         case "1.3.6.1.4.1.17.1.4.1.4.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.1.4.4.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = strConReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.2.1.1.9":
+                        case "1.3.6.1.2.1.1.15":
                         case "1.3.6.1.4.1.17.1.4.1.4.4.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.1.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strStatMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.2.1.1.10":
+                        case "1.3.6.1.2.1.1.16":
                         case "1.3.6.1.4.1.17.1.4.2.4.1.0":
+                            snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.2.0";
+                            snmpagent.Objects[i].Value = strStatReaderIn;
+                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                        case "1.3.6.1.2.1.1.17":
+                        case "1.3.6.1.4.1.17.1.4.2.4.2.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.3.0";
-                            snmpagent.Objects[i].Value = "0";
+                            snmpagent.Objects[i].Value = srtStatReaderOut;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.4.1.17.1.4.2.4.3.0":
                             snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.2.4.4.0";
-                            snmpagent.Objects[i].Value = "1";
+                            snmpagent.Objects[i].Value = strStatReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         default:
                             e.ErrorStatus = 2;
@@ -405,10 +446,7 @@ namespace SNMPLib2020
 
             e.Respond = true;
 
-            var a = "";
-            var b = "";
-
-            if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
+            if (string.IsNullOrEmpty(strConReaderIn) || string.IsNullOrEmpty(strStatReaderIn))
             {
                 for (int i = 0; i < snmpagent.Objects.Count; i++)
                 {
@@ -451,7 +489,7 @@ namespace SNMPLib2020
                     }
                 }
             }
-            else if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
+            else if (string.IsNullOrEmpty(strConReaderOut) || string.IsNullOrEmpty(srtStatReaderOut))
             {
                 for (int i = 0; i < snmpagent.Objects.Count; i++)
                 {
@@ -516,20 +554,26 @@ namespace SNMPLib2020
                         case "1.3.6.1.4.1.17.1.4.1.4.1.0":
                             snmpagent.Objects[i].Value = strConMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.3.0":
+                        case "1.3.6.1.4.1.17.1.4.1.4.2.0":
                             snmpagent.Objects[i].Value = strConReaderIn;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.1.4.4.0":
+                        case "1.3.6.1.4.1.17.1.4.1.4.3.0":
                             snmpagent.Objects[i].Value = strConReaderOut;
+                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                        case "1.3.6.1.4.1.17.1.4.1.4.4.0":
+                            snmpagent.Objects[i].Value = strConReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         case "1.3.6.1.4.1.17.1.4.2.4.1.0":
                             snmpagent.Objects[i].Value = strStatMbc;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.3.0":
+                        case "1.3.6.1.4.1.17.1.4.2.4.2.0":
                             snmpagent.Objects[i].Value = strStatReaderIn;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
-                        case "1.3.6.1.4.1.17.1.4.2.4.4.0":
+                        case "1.3.6.1.4.1.17.1.4.2.4.3.0":
                             snmpagent.Objects[i].Value = srtStatReaderOut;
+                            snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                        case "1.3.6.1.4.1.17.1.4.2.4.4.0":
+                            snmpagent.Objects[i].Value = strStatReader;
                             snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
                         default:
                             e.ErrorStatus = 2;
@@ -537,6 +581,37 @@ namespace SNMPLib2020
                     }
                 }
             }
+        }
+
+        private void snmpagent_OnPacketTrace(object sender, nsoftware.IPWorksSNMP.SnmpagentPacketTraceEventArgs e)
+        {
+            try
+            {
+                switch (e.Direction)
+                {
+                    case 1:
+                        Console.WriteLine("Packet received from: " + e.PacketAddress + ":" +
+                            e.PacketPort); break;
+                    case 2:
+                        Console.WriteLine("Packet sent to: " + e.PacketAddress + ":" +
+                            e.PacketPort); break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+            }
+
+        }
+
+        private void snmpagent_OnBadPacket(object sender, nsoftware.IPWorksSNMP.SnmpagentBadPacketEventArgs e)
+        {
+            Console.WriteLine("BadPacket: " + e.ErrorDescription);
+        }
+
+        private void snmpagent_OnError(object sender, nsoftware.IPWorksSNMP.SnmpagentErrorEventArgs e)
+        {
+            Console.WriteLine("Error: " + e.Description);
         }
     }
 }

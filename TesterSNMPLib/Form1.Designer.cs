@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtOIDVal15 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtOIDVal14 = new System.Windows.Forms.TextBox();
@@ -54,12 +53,11 @@
             this.Label4 = new System.Windows.Forms.Label();
             this.txtOIDVal2 = new System.Windows.Forms.TextBox();
             this.cmdListen = new System.Windows.Forms.Button();
-            this.snmpagent1 = new nsoftware.IPWorksSNMP.Snmpagent(this.components);
             this.lstEvents = new System.Windows.Forms.ListBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnSet1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOIDVal15
@@ -69,6 +67,7 @@
             this.txtOIDVal15.Name = "txtOIDVal15";
             this.txtOIDVal15.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal15.TabIndex = 172;
+            this.txtOIDVal15.Text = "0";
             // 
             // label2
             // 
@@ -86,6 +85,7 @@
             this.txtOIDVal14.Name = "txtOIDVal14";
             this.txtOIDVal14.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal14.TabIndex = 170;
+            this.txtOIDVal14.Text = "1";
             // 
             // label1
             // 
@@ -103,7 +103,7 @@
             this.txtOIDVal4.Name = "txtOIDVal4";
             this.txtOIDVal4.Size = new System.Drawing.Size(250, 20);
             this.txtOIDVal4.TabIndex = 149;
-            this.txtOIDVal4.Text = "0";
+            this.txtOIDVal4.Text = "12345";
             // 
             // txtOIDVal3
             // 
@@ -112,6 +112,7 @@
             this.txtOIDVal3.Name = "txtOIDVal3";
             this.txtOIDVal3.Size = new System.Drawing.Size(250, 20);
             this.txtOIDVal3.TabIndex = 148;
+            this.txtOIDVal3.Text = "StationCode";
             // 
             // txtOIDVal13
             // 
@@ -120,6 +121,7 @@
             this.txtOIDVal13.Name = "txtOIDVal13";
             this.txtOIDVal13.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal13.TabIndex = 166;
+            this.txtOIDVal13.Text = "0";
             // 
             // txtOIDVal12
             // 
@@ -128,6 +130,7 @@
             this.txtOIDVal12.Name = "txtOIDVal12";
             this.txtOIDVal12.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal12.TabIndex = 165;
+            this.txtOIDVal12.Text = "0";
             // 
             // txtOIDVal11
             // 
@@ -136,6 +139,7 @@
             this.txtOIDVal11.Name = "txtOIDVal11";
             this.txtOIDVal11.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal11.TabIndex = 164;
+            this.txtOIDVal11.Text = "0";
             // 
             // txtOIDVal10
             // 
@@ -144,6 +148,7 @@
             this.txtOIDVal10.Name = "txtOIDVal10";
             this.txtOIDVal10.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal10.TabIndex = 163;
+            this.txtOIDVal10.Text = "1";
             // 
             // txtOIDVal9
             // 
@@ -152,6 +157,7 @@
             this.txtOIDVal9.Name = "txtOIDVal9";
             this.txtOIDVal9.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal9.TabIndex = 162;
+            this.txtOIDVal9.Text = "1";
             // 
             // txtOIDVal8
             // 
@@ -160,6 +166,7 @@
             this.txtOIDVal8.Name = "txtOIDVal8";
             this.txtOIDVal8.Size = new System.Drawing.Size(38, 20);
             this.txtOIDVal8.TabIndex = 161;
+            this.txtOIDVal8.Text = "1";
             // 
             // label66
             // 
@@ -269,27 +276,24 @@
             this.txtOIDVal2.Name = "txtOIDVal2";
             this.txtOIDVal2.Size = new System.Drawing.Size(250, 20);
             this.txtOIDVal2.TabIndex = 147;
+            this.txtOIDVal2.Text = "DeviceName";
             // 
             // cmdListen
             // 
             this.cmdListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdListen.Location = new System.Drawing.Point(15, 234);
+            this.cmdListen.Location = new System.Drawing.Point(15, 283);
             this.cmdListen.Name = "cmdListen";
             this.cmdListen.Size = new System.Drawing.Size(428, 35);
             this.cmdListen.TabIndex = 173;
             this.cmdListen.Text = "Start";
             this.cmdListen.Click += new System.EventHandler(this.cmdListen_Click);
             // 
-            // snmpagent1
-            // 
-            this.snmpagent1.About = "IPWorks SNMP 2020 [Build 7721]";
-            // 
             // lstEvents
             // 
             this.lstEvents.FormattingEnabled = true;
-            this.lstEvents.Location = new System.Drawing.Point(15, 279);
+            this.lstEvents.Location = new System.Drawing.Point(15, 331);
             this.lstEvents.Name = "lstEvents";
-            this.lstEvents.Size = new System.Drawing.Size(428, 290);
+            this.lstEvents.Size = new System.Drawing.Size(428, 238);
             this.lstEvents.TabIndex = 174;
             // 
             // btnSet1
@@ -310,6 +314,7 @@
             this.button3.TabIndex = 177;
             this.button3.Text = "Set 2";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -319,12 +324,24 @@
             this.button2.TabIndex = 178;
             this.button2.Text = "Set 3";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 237);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(428, 35);
+            this.button1.TabIndex = 179;
+            this.button1.Text = "Set All";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 583);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnSet1);
@@ -392,12 +409,11 @@
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.TextBox txtOIDVal2;
         internal System.Windows.Forms.Button cmdListen;
-        private nsoftware.IPWorksSNMP.Snmpagent snmpagent1;
         private System.Windows.Forms.ListBox lstEvents;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnSet1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
