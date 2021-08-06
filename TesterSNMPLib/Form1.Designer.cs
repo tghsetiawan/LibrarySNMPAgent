@@ -298,32 +298,38 @@
             // 
             // btnSet1
             // 
+            this.btnSet1.Enabled = false;
             this.btnSet1.Location = new System.Drawing.Point(368, 6);
             this.btnSet1.Name = "btnSet1";
             this.btnSet1.Size = new System.Drawing.Size(75, 70);
             this.btnSet1.TabIndex = 175;
             this.btnSet1.Text = "Set 1";
             this.btnSet1.UseVisualStyleBackColor = true;
+            this.btnSet1.Visible = false;
             this.btnSet1.Click += new System.EventHandler(this.btnSet1_Click);
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(139, 121);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 100);
             this.button3.TabIndex = 177;
             this.button3.Text = "Set 2";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(368, 121);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 100);
             this.button2.TabIndex = 178;
             this.button2.Text = "Set 3";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1

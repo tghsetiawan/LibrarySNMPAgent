@@ -66,22 +66,22 @@ namespace TesterSNMPLib
 
         private void btnSet1_Click(object sender, EventArgs e)
         {
-            snmpagent2020.set1(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text);
+            //snmpagent2020.set1(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            snmpagent2020.set2(txtOIDVal8.Text, txtOIDVal9.Text, txtOIDVal10.Text, txtOIDVal14.Text);
+            //snmpagent2020.set2(txtOIDVal8.Text, txtOIDVal9.Text, txtOIDVal10.Text, txtOIDVal14.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            snmpagent2020.set3(txtOIDVal11.Text, txtOIDVal12.Text, txtOIDVal13.Text, txtOIDVal15.Text);
+            //snmpagent2020.set3(txtOIDVal11.Text, txtOIDVal12.Text, txtOIDVal13.Text, txtOIDVal15.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            snmpagent2020.setAll(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text, txtOIDVal8.Text, txtOIDVal9.Text, txtOIDVal10.Text, txtOIDVal14.Text, txtOIDVal11.Text, txtOIDVal12.Text, txtOIDVal13.Text, txtOIDVal15.Text);
+            //snmpagent2020.setAll(txtOIDVal2.Text, txtOIDVal3.Text, txtOIDVal4.Text, txtOIDVal8.Text, txtOIDVal9.Text, txtOIDVal10.Text, txtOIDVal14.Text, txtOIDVal11.Text, txtOIDVal12.Text, txtOIDVal13.Text, txtOIDVal15.Text);
         }
     }
 }
