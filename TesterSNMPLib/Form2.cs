@@ -48,5 +48,15 @@ namespace TesterSNMPLib
         {
             button7.Text = snmpagent2020.snmpagentStart() ? "Stop" : "Start";
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            snmpagent2020.setVarVending(txtTerminalNameVending.Text, txtStationCodeVending.Text, txtUpTimeVending.Text, txtEpcStatusVending.Text, txtDbStatusVending.Text, txtOnlineStatusVending.Text, txtPrinterStatusVending.Text, txtQrsStatusVending.Text, txtReaderStatusVending.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            snmpagent2020.setVarAcPos(txtTerminalNameAcPos.Text, txtStationCodeAcPos.Text, txtUpTimeAcPos.Text, txtEpcStatusAcPos.Text, txtDbStatusAcPos.Text, txtPrinterStatusAcPos.Text, txtReaderStatusAcPos.Text);
+        }
     }
 }

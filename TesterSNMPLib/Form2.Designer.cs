@@ -78,38 +78,38 @@
             this.tbVM = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.txtReaderStatusVending = new System.Windows.Forms.TextBox();
+            this.txtQrsStatusVending = new System.Windows.Forms.TextBox();
+            this.txtPrinterStatusVending = new System.Windows.Forms.TextBox();
+            this.txtOnlineStatusVending = new System.Windows.Forms.TextBox();
+            this.txtDbStatusVending = new System.Windows.Forms.TextBox();
+            this.txtEpcStatusVending = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtTerminalNameVending = new System.Windows.Forms.TextBox();
+            this.txtStationCodeVending = new System.Windows.Forms.TextBox();
+            this.txtUpTimeVending = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.tbACPoS = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.txtReaderStatusAcPos = new System.Windows.Forms.TextBox();
+            this.txtPrinterStatusAcPos = new System.Windows.Forms.TextBox();
+            this.txtDbStatusAcPos = new System.Windows.Forms.TextBox();
+            this.txtEpcStatusAcPos = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.txtTerminalNameAcPos = new System.Windows.Forms.TextBox();
+            this.txtStationCodeAcPos = new System.Windows.Forms.TextBox();
+            this.txtUpTimeAcPos = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -643,21 +643,21 @@
             // 
             this.tbVM.Controls.Add(this.button6);
             this.tbVM.Controls.Add(this.button3);
-            this.tbVM.Controls.Add(this.textBox9);
-            this.tbVM.Controls.Add(this.textBox10);
-            this.tbVM.Controls.Add(this.textBox20);
-            this.tbVM.Controls.Add(this.textBox21);
-            this.tbVM.Controls.Add(this.textBox22);
-            this.tbVM.Controls.Add(this.textBox23);
+            this.tbVM.Controls.Add(this.txtReaderStatusVending);
+            this.tbVM.Controls.Add(this.txtQrsStatusVending);
+            this.tbVM.Controls.Add(this.txtPrinterStatusVending);
+            this.tbVM.Controls.Add(this.txtOnlineStatusVending);
+            this.tbVM.Controls.Add(this.txtDbStatusVending);
+            this.tbVM.Controls.Add(this.txtEpcStatusVending);
             this.tbVM.Controls.Add(this.label12);
             this.tbVM.Controls.Add(this.label13);
             this.tbVM.Controls.Add(this.label23);
             this.tbVM.Controls.Add(this.label24);
             this.tbVM.Controls.Add(this.label25);
             this.tbVM.Controls.Add(this.label26);
-            this.tbVM.Controls.Add(this.textBox24);
-            this.tbVM.Controls.Add(this.textBox25);
-            this.tbVM.Controls.Add(this.textBox26);
+            this.tbVM.Controls.Add(this.txtTerminalNameVending);
+            this.tbVM.Controls.Add(this.txtStationCodeVending);
+            this.tbVM.Controls.Add(this.txtUpTimeVending);
             this.tbVM.Controls.Add(this.label27);
             this.tbVM.Controls.Add(this.label28);
             this.tbVM.Controls.Add(this.label29);
@@ -688,66 +688,67 @@
             this.button3.TabIndex = 216;
             this.button3.Text = "button_VM";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox9
+            // txtReaderStatusVending
             // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(185, 300);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(250, 24);
-            this.textBox9.TabIndex = 199;
-            this.textBox9.Text = "0";
+            this.txtReaderStatusVending.BackColor = System.Drawing.Color.White;
+            this.txtReaderStatusVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReaderStatusVending.Location = new System.Drawing.Point(185, 300);
+            this.txtReaderStatusVending.Name = "txtReaderStatusVending";
+            this.txtReaderStatusVending.Size = new System.Drawing.Size(250, 24);
+            this.txtReaderStatusVending.TabIndex = 199;
+            this.txtReaderStatusVending.Text = "0";
             // 
-            // textBox10
+            // txtQrsStatusVending
             // 
-            this.textBox10.BackColor = System.Drawing.Color.White;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(185, 267);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(250, 24);
-            this.textBox10.TabIndex = 215;
-            this.textBox10.Text = "1";
+            this.txtQrsStatusVending.BackColor = System.Drawing.Color.White;
+            this.txtQrsStatusVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQrsStatusVending.Location = new System.Drawing.Point(185, 267);
+            this.txtQrsStatusVending.Name = "txtQrsStatusVending";
+            this.txtQrsStatusVending.Size = new System.Drawing.Size(250, 24);
+            this.txtQrsStatusVending.TabIndex = 215;
+            this.txtQrsStatusVending.Text = "1";
             // 
-            // textBox20
+            // txtPrinterStatusVending
             // 
-            this.textBox20.BackColor = System.Drawing.Color.White;
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(185, 234);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(250, 24);
-            this.textBox20.TabIndex = 214;
-            this.textBox20.Text = "0";
+            this.txtPrinterStatusVending.BackColor = System.Drawing.Color.White;
+            this.txtPrinterStatusVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrinterStatusVending.Location = new System.Drawing.Point(185, 234);
+            this.txtPrinterStatusVending.Name = "txtPrinterStatusVending";
+            this.txtPrinterStatusVending.Size = new System.Drawing.Size(250, 24);
+            this.txtPrinterStatusVending.TabIndex = 214;
+            this.txtPrinterStatusVending.Text = "0";
             // 
-            // textBox21
+            // txtOnlineStatusVending
             // 
-            this.textBox21.BackColor = System.Drawing.Color.White;
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(185, 201);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(250, 24);
-            this.textBox21.TabIndex = 213;
-            this.textBox21.Text = "1";
+            this.txtOnlineStatusVending.BackColor = System.Drawing.Color.White;
+            this.txtOnlineStatusVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOnlineStatusVending.Location = new System.Drawing.Point(185, 201);
+            this.txtOnlineStatusVending.Name = "txtOnlineStatusVending";
+            this.txtOnlineStatusVending.Size = new System.Drawing.Size(250, 24);
+            this.txtOnlineStatusVending.TabIndex = 213;
+            this.txtOnlineStatusVending.Text = "1";
             // 
-            // textBox22
+            // txtDbStatusVending
             // 
-            this.textBox22.BackColor = System.Drawing.Color.White;
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(185, 168);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(250, 24);
-            this.textBox22.TabIndex = 212;
-            this.textBox22.Text = "0";
+            this.txtDbStatusVending.BackColor = System.Drawing.Color.White;
+            this.txtDbStatusVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDbStatusVending.Location = new System.Drawing.Point(185, 168);
+            this.txtDbStatusVending.Name = "txtDbStatusVending";
+            this.txtDbStatusVending.Size = new System.Drawing.Size(250, 24);
+            this.txtDbStatusVending.TabIndex = 212;
+            this.txtDbStatusVending.Text = "0";
             // 
-            // textBox23
+            // txtEpcStatusVending
             // 
-            this.textBox23.BackColor = System.Drawing.Color.White;
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(185, 135);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(250, 24);
-            this.textBox23.TabIndex = 211;
-            this.textBox23.Text = "1";
+            this.txtEpcStatusVending.BackColor = System.Drawing.Color.White;
+            this.txtEpcStatusVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEpcStatusVending.Location = new System.Drawing.Point(185, 135);
+            this.txtEpcStatusVending.Name = "txtEpcStatusVending";
+            this.txtEpcStatusVending.Size = new System.Drawing.Size(250, 24);
+            this.txtEpcStatusVending.TabIndex = 211;
+            this.txtEpcStatusVending.Text = "1";
             // 
             // label12
             // 
@@ -809,35 +810,35 @@
             this.label26.TabIndex = 205;
             this.label26.Text = "EPC Status:";
             // 
-            // textBox24
+            // txtTerminalNameVending
             // 
-            this.textBox24.BackColor = System.Drawing.Color.White;
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(159, 17);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(276, 24);
-            this.textBox24.TabIndex = 198;
-            this.textBox24.Text = "Device_VM";
+            this.txtTerminalNameVending.BackColor = System.Drawing.Color.White;
+            this.txtTerminalNameVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTerminalNameVending.Location = new System.Drawing.Point(159, 17);
+            this.txtTerminalNameVending.Name = "txtTerminalNameVending";
+            this.txtTerminalNameVending.Size = new System.Drawing.Size(276, 24);
+            this.txtTerminalNameVending.TabIndex = 198;
+            this.txtTerminalNameVending.Text = "Device_VM";
             // 
-            // textBox25
+            // txtStationCodeVending
             // 
-            this.textBox25.BackColor = System.Drawing.Color.White;
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(159, 50);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(276, 24);
-            this.textBox25.TabIndex = 200;
-            this.textBox25.Text = "Station_VM";
+            this.txtStationCodeVending.BackColor = System.Drawing.Color.White;
+            this.txtStationCodeVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStationCodeVending.Location = new System.Drawing.Point(159, 50);
+            this.txtStationCodeVending.Name = "txtStationCodeVending";
+            this.txtStationCodeVending.Size = new System.Drawing.Size(276, 24);
+            this.txtStationCodeVending.TabIndex = 200;
+            this.txtStationCodeVending.Text = "Station_VM";
             // 
-            // textBox26
+            // txtUpTimeVending
             // 
-            this.textBox26.BackColor = System.Drawing.Color.White;
-            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(159, 83);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(276, 24);
-            this.textBox26.TabIndex = 201;
-            this.textBox26.Text = "12345";
+            this.txtUpTimeVending.BackColor = System.Drawing.Color.White;
+            this.txtUpTimeVending.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpTimeVending.Location = new System.Drawing.Point(159, 83);
+            this.txtUpTimeVending.Name = "txtUpTimeVending";
+            this.txtUpTimeVending.Size = new System.Drawing.Size(276, 24);
+            this.txtUpTimeVending.TabIndex = 201;
+            this.txtUpTimeVending.Text = "12345";
             // 
             // label27
             // 
@@ -873,17 +874,17 @@
             // 
             this.tbACPoS.Controls.Add(this.button7);
             this.tbACPoS.Controls.Add(this.button4);
-            this.tbACPoS.Controls.Add(this.textBox27);
-            this.tbACPoS.Controls.Add(this.textBox29);
-            this.tbACPoS.Controls.Add(this.textBox31);
-            this.tbACPoS.Controls.Add(this.textBox32);
+            this.tbACPoS.Controls.Add(this.txtReaderStatusAcPos);
+            this.tbACPoS.Controls.Add(this.txtPrinterStatusAcPos);
+            this.tbACPoS.Controls.Add(this.txtDbStatusAcPos);
+            this.tbACPoS.Controls.Add(this.txtEpcStatusAcPos);
             this.tbACPoS.Controls.Add(this.label30);
             this.tbACPoS.Controls.Add(this.label32);
             this.tbACPoS.Controls.Add(this.label34);
             this.tbACPoS.Controls.Add(this.label35);
-            this.tbACPoS.Controls.Add(this.textBox33);
-            this.tbACPoS.Controls.Add(this.textBox34);
-            this.tbACPoS.Controls.Add(this.textBox35);
+            this.tbACPoS.Controls.Add(this.txtTerminalNameAcPos);
+            this.tbACPoS.Controls.Add(this.txtStationCodeAcPos);
+            this.tbACPoS.Controls.Add(this.txtUpTimeAcPos);
             this.tbACPoS.Controls.Add(this.label36);
             this.tbACPoS.Controls.Add(this.label37);
             this.tbACPoS.Controls.Add(this.label38);
@@ -914,46 +915,47 @@
             this.button4.TabIndex = 235;
             this.button4.Text = "button_AC-POS";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox27
+            // txtReaderStatusAcPos
             // 
-            this.textBox27.BackColor = System.Drawing.Color.White;
-            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(185, 231);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(250, 24);
-            this.textBox27.TabIndex = 218;
-            this.textBox27.Text = "0";
+            this.txtReaderStatusAcPos.BackColor = System.Drawing.Color.White;
+            this.txtReaderStatusAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReaderStatusAcPos.Location = new System.Drawing.Point(185, 231);
+            this.txtReaderStatusAcPos.Name = "txtReaderStatusAcPos";
+            this.txtReaderStatusAcPos.Size = new System.Drawing.Size(250, 24);
+            this.txtReaderStatusAcPos.TabIndex = 218;
+            this.txtReaderStatusAcPos.Text = "0";
             // 
-            // textBox29
+            // txtPrinterStatusAcPos
             // 
-            this.textBox29.BackColor = System.Drawing.Color.White;
-            this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox29.Location = new System.Drawing.Point(185, 200);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(250, 24);
-            this.textBox29.TabIndex = 233;
-            this.textBox29.Text = "1";
+            this.txtPrinterStatusAcPos.BackColor = System.Drawing.Color.White;
+            this.txtPrinterStatusAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrinterStatusAcPos.Location = new System.Drawing.Point(185, 200);
+            this.txtPrinterStatusAcPos.Name = "txtPrinterStatusAcPos";
+            this.txtPrinterStatusAcPos.Size = new System.Drawing.Size(250, 24);
+            this.txtPrinterStatusAcPos.TabIndex = 233;
+            this.txtPrinterStatusAcPos.Text = "1";
             // 
-            // textBox31
+            // txtDbStatusAcPos
             // 
-            this.textBox31.BackColor = System.Drawing.Color.White;
-            this.textBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox31.Location = new System.Drawing.Point(185, 168);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(250, 24);
-            this.textBox31.TabIndex = 231;
-            this.textBox31.Text = "0";
+            this.txtDbStatusAcPos.BackColor = System.Drawing.Color.White;
+            this.txtDbStatusAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDbStatusAcPos.Location = new System.Drawing.Point(185, 168);
+            this.txtDbStatusAcPos.Name = "txtDbStatusAcPos";
+            this.txtDbStatusAcPos.Size = new System.Drawing.Size(250, 24);
+            this.txtDbStatusAcPos.TabIndex = 231;
+            this.txtDbStatusAcPos.Text = "0";
             // 
-            // textBox32
+            // txtEpcStatusAcPos
             // 
-            this.textBox32.BackColor = System.Drawing.Color.White;
-            this.textBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox32.Location = new System.Drawing.Point(185, 135);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(250, 24);
-            this.textBox32.TabIndex = 230;
-            this.textBox32.Text = "1";
+            this.txtEpcStatusAcPos.BackColor = System.Drawing.Color.White;
+            this.txtEpcStatusAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEpcStatusAcPos.Location = new System.Drawing.Point(185, 135);
+            this.txtEpcStatusAcPos.Name = "txtEpcStatusAcPos";
+            this.txtEpcStatusAcPos.Size = new System.Drawing.Size(250, 24);
+            this.txtEpcStatusAcPos.TabIndex = 230;
+            this.txtEpcStatusAcPos.Text = "1";
             // 
             // label30
             // 
@@ -995,35 +997,35 @@
             this.label35.TabIndex = 224;
             this.label35.Text = "EPC Status:";
             // 
-            // textBox33
+            // txtTerminalNameAcPos
             // 
-            this.textBox33.BackColor = System.Drawing.Color.White;
-            this.textBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox33.Location = new System.Drawing.Point(159, 17);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(276, 24);
-            this.textBox33.TabIndex = 217;
-            this.textBox33.Text = "Device_AC-POS";
+            this.txtTerminalNameAcPos.BackColor = System.Drawing.Color.White;
+            this.txtTerminalNameAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTerminalNameAcPos.Location = new System.Drawing.Point(159, 17);
+            this.txtTerminalNameAcPos.Name = "txtTerminalNameAcPos";
+            this.txtTerminalNameAcPos.Size = new System.Drawing.Size(276, 24);
+            this.txtTerminalNameAcPos.TabIndex = 217;
+            this.txtTerminalNameAcPos.Text = "Device_AC-POS";
             // 
-            // textBox34
+            // txtStationCodeAcPos
             // 
-            this.textBox34.BackColor = System.Drawing.Color.White;
-            this.textBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox34.Location = new System.Drawing.Point(159, 50);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(276, 24);
-            this.textBox34.TabIndex = 219;
-            this.textBox34.Text = "Station_AC-POS";
+            this.txtStationCodeAcPos.BackColor = System.Drawing.Color.White;
+            this.txtStationCodeAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStationCodeAcPos.Location = new System.Drawing.Point(159, 50);
+            this.txtStationCodeAcPos.Name = "txtStationCodeAcPos";
+            this.txtStationCodeAcPos.Size = new System.Drawing.Size(276, 24);
+            this.txtStationCodeAcPos.TabIndex = 219;
+            this.txtStationCodeAcPos.Text = "Station_AC-POS";
             // 
-            // textBox35
+            // txtUpTimeAcPos
             // 
-            this.textBox35.BackColor = System.Drawing.Color.White;
-            this.textBox35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox35.Location = new System.Drawing.Point(159, 83);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(276, 24);
-            this.textBox35.TabIndex = 220;
-            this.textBox35.Text = "12345";
+            this.txtUpTimeAcPos.BackColor = System.Drawing.Color.White;
+            this.txtUpTimeAcPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpTimeAcPos.Location = new System.Drawing.Point(159, 83);
+            this.txtUpTimeAcPos.Name = "txtUpTimeAcPos";
+            this.txtUpTimeAcPos.Size = new System.Drawing.Size(276, 24);
+            this.txtUpTimeAcPos.TabIndex = 220;
+            this.txtUpTimeAcPos.Text = "12345";
             // 
             // label36
             // 
@@ -1127,36 +1129,36 @@
         internal System.Windows.Forms.Label label21;
         internal System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button3;
-        internal System.Windows.Forms.TextBox textBox9;
-        internal System.Windows.Forms.TextBox textBox10;
-        internal System.Windows.Forms.TextBox textBox20;
-        internal System.Windows.Forms.TextBox textBox21;
-        internal System.Windows.Forms.TextBox textBox22;
-        internal System.Windows.Forms.TextBox textBox23;
+        internal System.Windows.Forms.TextBox txtReaderStatusVending;
+        internal System.Windows.Forms.TextBox txtQrsStatusVending;
+        internal System.Windows.Forms.TextBox txtPrinterStatusVending;
+        internal System.Windows.Forms.TextBox txtOnlineStatusVending;
+        internal System.Windows.Forms.TextBox txtDbStatusVending;
+        internal System.Windows.Forms.TextBox txtEpcStatusVending;
         internal System.Windows.Forms.Label label12;
         internal System.Windows.Forms.Label label13;
         internal System.Windows.Forms.Label label23;
         internal System.Windows.Forms.Label label24;
         internal System.Windows.Forms.Label label25;
         internal System.Windows.Forms.Label label26;
-        internal System.Windows.Forms.TextBox textBox24;
-        internal System.Windows.Forms.TextBox textBox25;
-        internal System.Windows.Forms.TextBox textBox26;
+        internal System.Windows.Forms.TextBox txtTerminalNameVending;
+        internal System.Windows.Forms.TextBox txtStationCodeVending;
+        internal System.Windows.Forms.TextBox txtUpTimeVending;
         internal System.Windows.Forms.Label label27;
         internal System.Windows.Forms.Label label28;
         internal System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button button4;
-        internal System.Windows.Forms.TextBox textBox27;
-        internal System.Windows.Forms.TextBox textBox29;
-        internal System.Windows.Forms.TextBox textBox31;
-        internal System.Windows.Forms.TextBox textBox32;
+        internal System.Windows.Forms.TextBox txtReaderStatusAcPos;
+        internal System.Windows.Forms.TextBox txtPrinterStatusAcPos;
+        internal System.Windows.Forms.TextBox txtDbStatusAcPos;
+        internal System.Windows.Forms.TextBox txtEpcStatusAcPos;
         internal System.Windows.Forms.Label label30;
         internal System.Windows.Forms.Label label32;
         internal System.Windows.Forms.Label label34;
         internal System.Windows.Forms.Label label35;
-        internal System.Windows.Forms.TextBox textBox33;
-        internal System.Windows.Forms.TextBox textBox34;
-        internal System.Windows.Forms.TextBox textBox35;
+        internal System.Windows.Forms.TextBox txtTerminalNameAcPos;
+        internal System.Windows.Forms.TextBox txtStationCodeAcPos;
+        internal System.Windows.Forms.TextBox txtUpTimeAcPos;
         internal System.Windows.Forms.Label label36;
         internal System.Windows.Forms.Label label37;
         internal System.Windows.Forms.Label label38;

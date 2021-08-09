@@ -174,6 +174,7 @@ namespace SNMPLib2020
             switch (device)
             {
                 case "Gate":
+                    snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentGate_OnGetNextRequest);
                     snmpagent.OnGetNextRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentGate_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentPos_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentVending_OnGetNextRequest);
@@ -181,6 +182,7 @@ namespace SNMPLib2020
                     break;
                 case "Pos":
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentGate_OnGetNextRequest);
+                    snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentPos_OnGetNextRequest);
                     snmpagent.OnGetNextRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentPos_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentVending_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentAcPos_OnGetNextRequest);
@@ -188,6 +190,7 @@ namespace SNMPLib2020
                 case "Vending":
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentGate_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentPos_OnGetNextRequest);
+                    snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentVending_OnGetNextRequest);
                     snmpagent.OnGetNextRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentVending_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentAcPos_OnGetNextRequest);
                     break;
@@ -195,6 +198,7 @@ namespace SNMPLib2020
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentGate_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentPos_OnGetNextRequest);
                     snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentVending_OnGetNextRequest);
+                    snmpagent.OnGetNextRequest -= new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentAcPos_OnGetNextRequest);
                     snmpagent.OnGetNextRequest += new nsoftware.IPWorksSNMP.Snmpagent.OnGetNextRequestHandler(this.snmpagentAcPos_OnGetNextRequest);
                     break;
                 default:
@@ -246,7 +250,7 @@ namespace SNMPLib2020
             resetOnGetNextRequest("Vending");
         }
 
-        public void setVarAcPos(string _strDeviceName, string _strStasionCode, string _strUpTime, string _strEpcStatus, string _strDbStatus, string _strPrinterStatus, string _strQrsStatus, string _strReaderStatus)
+        public void setVarAcPos(string _strDeviceName, string _strStasionCode, string _strUpTime, string _strEpcStatus, string _strDbStatus, string _strPrinterStatus, string _strReaderStatus)
         {
             acPosDevice.TerminalNameAcPos = _strDeviceName;
             acPosDevice.StationCodeAcPos = _strStasionCode;
@@ -694,7 +698,7 @@ namespace SNMPLib2020
         #region Gate
         private void snmpagentGate_OnGetNextRequest(object sender, nsoftware.IPWorksSNMP.SnmpagentGetNextRequestEventArgs e)
         {
-            Console.WriteLine("GetNextRequest");
+            Console.WriteLine("Gate_GetNextRequest");
 
             e.Respond = true;
 
@@ -758,7 +762,7 @@ namespace SNMPLib2020
         #region Pos
         private void snmpagentPos_OnGetNextRequest(object sender, nsoftware.IPWorksSNMP.SnmpagentGetNextRequestEventArgs e)
         {
-            Console.WriteLine("GetNextRequest");
+            Console.WriteLine("Pos_GetNextRequest");
 
             e.Respond = true;
 
@@ -814,14 +818,104 @@ namespace SNMPLib2020
         #region Vending
         private void snmpagentVending_OnGetNextRequest(object sender, nsoftware.IPWorksSNMP.SnmpagentGetNextRequestEventArgs e)
         {
+            Console.WriteLine("Vending_GetNextRequest");
 
+            e.Respond = true;
+
+            for (int i = 0; i < snmpagent.Objects.Count; i++)
+            {
+                //set objType and objValue to send get response
+                switch (snmpagent.Objects[i].Oid)
+                {
+                    case "1.3.6.1.4.1.17.1":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.1.0";
+                        snmpagent.Objects[i].Value = vendingDevice.TerminalNameVending;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
+                    case "1.3.6.1.4.1.17.1.1.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.2.0";
+                        snmpagent.Objects[i].Value = vendingDevice.StationCodeVending;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
+                    case "1.3.6.1.4.1.17.1.2.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.3.0";
+                        snmpagent.Objects[i].Value = vendingDevice.UpTimeVending;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
+                    case "1.3.6.1.4.1.17.1.3.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.3.1.0";
+                        snmpagent.Objects[i].Value = vendingDevice.EpcStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.3.1.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.3.2.0";
+                        snmpagent.Objects[i].Value = vendingDevice.DbStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.3.2.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.3.3.0";
+                        snmpagent.Objects[i].Value = vendingDevice.OnlinePaymentStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.3.3.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.3.4.0";
+                        snmpagent.Objects[i].Value = vendingDevice.PrinterStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.3.4.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.3.5.0";
+                        snmpagent.Objects[i].Value = vendingDevice.QrsStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.3.5.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.3.6.0";
+                        snmpagent.Objects[i].Value = vendingDevice.ReaderStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    default:
+                        e.ErrorStatus = 2;
+                        break;
+                }
+            }
         }
         #endregion
 
         #region AcPos
         private void snmpagentAcPos_OnGetNextRequest(object sender, nsoftware.IPWorksSNMP.SnmpagentGetNextRequestEventArgs e)
         {
+            Console.WriteLine("AcPos_GetNextRequest");
 
+            e.Respond = true;
+
+            for (int i = 0; i < snmpagent.Objects.Count; i++)
+            {
+                //set objType and objValue to send get response
+                switch (snmpagent.Objects[i].Oid)
+                {
+                    case "1.3.6.1.4.1.17.1":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.1.0";
+                        snmpagent.Objects[i].Value = acPosDevice.TerminalNameAcPos;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
+                    case "1.3.6.1.4.1.17.1.1.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.2.0";
+                        snmpagent.Objects[i].Value = acPosDevice.StationCodeAcPos;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otOctetString; break;
+                    case "1.3.6.1.4.1.17.1.2.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.3.0";
+                        snmpagent.Objects[i].Value = acPosDevice.UpTimeAcPos;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otTimeTicks; break;
+                    case "1.3.6.1.4.1.17.1.3.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.4.1.0";
+                        snmpagent.Objects[i].Value = acPosDevice.EpcStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.4.1.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.4.2.0";
+                        snmpagent.Objects[i].Value = acPosDevice.DbStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.4.2.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.4.3.0";
+                        snmpagent.Objects[i].Value = acPosDevice.PrinterStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    case "1.3.6.1.4.1.17.1.4.4.3.0":
+                        snmpagent.Objects[i].Oid = "1.3.6.1.4.1.17.1.4.4.4.0";
+                        snmpagent.Objects[i].Value = acPosDevice.ReaderStatus;
+                        snmpagent.Objects[i].ObjectType = SNMPObjectTypes.otUnsignedInteger32; break;
+                    default:
+                        e.ErrorStatus = 2;
+                        break;
+                }
+            }
         }
         #endregion
     }
