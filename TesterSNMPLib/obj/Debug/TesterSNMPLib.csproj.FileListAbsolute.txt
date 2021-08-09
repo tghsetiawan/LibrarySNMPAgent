@@ -7,7 +7,6 @@ C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\De
 C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.exe
 C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.pdb
 C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\nsoftware.IPWorksSNMP.System.dll
-C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.Form1.resources
 C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\obj\Debug\TesterSNMPLib.csproj.CopyComplete
 C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\nsoftware.IPWorksSNMP.xml
 C:\Users\teguh\Documents\Visual Studio 2019\Project\SNMPLib\TesterSNMPLib\bin\Debug\SNMPLib2020.dll
